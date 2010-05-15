@@ -5,8 +5,8 @@
 ## Notes: DataBroker clone of the default UI's LFG button.
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Website: http://www.wowinterface.com/downloads/info-BrokerLFG.html
-## X-WoWI-ID:
+## X-Website: http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
+## X-WoWI-ID: 16710
 
 ## OptionalDependencies: LibDataBroker-1.1
 
