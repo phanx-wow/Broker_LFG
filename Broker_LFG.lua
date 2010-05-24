@@ -72,10 +72,11 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 		local mode = GetLFGMode()
 		if mode == "queued" then
 			local screenHalf = GetScreenHalf()
+			LFDSearchStatus:SetParent(UIParent)
 			LFDSearchStatus:SetClampedToScreen(true)
-			LFDSearchStatus:Show()
 			LFDSearchStatus:ClearAllPoints()
 			LFDSearchStatus:SetPoint(screenHalf, self, screenHalf == "TOP" and "BOTTOM" or "TOP")
+			LFDSearchStatus:Show()
 		elseif mode == "proposal" then
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText(LOOKING_FOR_DUNGEON)
@@ -149,4 +150,4 @@ BrokerLFG:RegisterEvent("LFG_ROLE_CHECK_UPDATE")
 BrokerLFG:RegisterEvent("LFG_PROPOSAL_UPDATE")
 
 MiniMapLFGFrame:Hide()
-MiniMapLFGFrame:SetScript("OnShow", MiniMapLFGFrame.Hide)
+MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
