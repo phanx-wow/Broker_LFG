@@ -137,7 +137,6 @@ end
 if select(4, GetAddOnInfo("DockingStation")) then return end
 
 BrokerLFG:SetScript("OnEvent", function(self, event)
-	print(event)
 	local mode = GetLFGMode()
 	if mode == "queued" or mode == "listed" or mode == "rolecheck" then
 		self:SetScript("OnUpdate", UpdateIconCoords)
