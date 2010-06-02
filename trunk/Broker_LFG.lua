@@ -14,7 +14,10 @@
 	unless such conditions are required by law.
 ----------------------------------------------------------------------]]
 
-local texCoords = setmetatable({}, { __index = function(t, i)
+MiniMapLFGFrame:Hide()
+MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
+
+local iconCoords = setmetatable({}, { __index = function(t, i)
 	if type(i) ~= "number" then i = 1 end
 
 	local L = mod(i - 1, 8) * 0.125
@@ -42,7 +45,7 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	type = "launcher",
 	icon = "Interface\\LFGFrame\\LFG-Eye",
 	label = "LFG",
-	texCoords = texCoords[1],
+	iconCoords = iconCoords[1],
 	OnClick = function(self, button)
 		local mode = GetLFGMode()
 		if mode then
@@ -122,25 +125,26 @@ local function UpdateIconCoords(self, elapsed)
 		if currentFrame > 29 then
 			currentFrame = 1
 		end
-		self.feed.iconCoords = texCoords[currentFrame]
+		self.feed.iconCoords = iconCoords[currentFrame] or iconCoords[1]
 		currentFrame = currentFrame + 1
 		counter = 0
 	end
 end
 
-BrokerLFG:SetScript("OnEvent", function(self)
+--	2010-06-02: Disable animation for DockingStation users, since that
+--  display breaks on plugins that frequently change their iconCoords.
+
+if select(4, GetAddOnInfo("DockingStation")) then return end
+
+BrokerLFG:SetScript("OnEvent", function(self, event)
+	print(event)
 	local mode = GetLFGMode()
-	if mode then
-		if mode == "queued" or mode == "listed" or mode == "rolecheck" then
-			self:SetScript("OnUpdate", UpdateIconCoords)
-		else
-			self:SetScript("OnUpdate", nil)
-			currentFrame = 1
-			self.feed.iconCoords = texCoords[1]
-		end
+	if mode == "queued" or mode == "listed" or mode == "rolecheck" then
+		self:SetScript("OnUpdate", UpdateIconCoords)
 	else
+		self:SetScript("OnUpdate", nil)
+		self.feed.iconCoords = iconCoords[1]
 		currentFrame = 1
-		self.feed.iconCoords = texCoords[1]
 	end
 end)
 
@@ -148,6 +152,3 @@ BrokerLFG:RegisterEvent("LFG_UPDATE")
 BrokerLFG:RegisterEvent("PLAYER_ENTERING_WORLD")
 BrokerLFG:RegisterEvent("LFG_ROLE_CHECK_UPDATE")
 BrokerLFG:RegisterEvent("LFG_PROPOSAL_UPDATE")
-
-MiniMapLFGFrame:Hide()
-MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
