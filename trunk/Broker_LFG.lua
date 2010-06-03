@@ -131,11 +131,6 @@ local function UpdateIconCoords(self, elapsed)
 	end
 end
 
---	2010-06-02: Disable animation for DockingStation users, since that
---  display breaks on plugins that frequently change their iconCoords.
-
-if select(4, GetAddOnInfo("DockingStation")) then return end
-
 BrokerLFG:SetScript("OnEvent", function(self, event)
 	local mode = GetLFGMode()
 	if mode == "queued" or mode == "listed" or mode == "rolecheck" then
