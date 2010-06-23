@@ -4,7 +4,7 @@
 	by Phanx < addons@phanx.net >
 	http://www.wowinterface.com/downloads/info-BrokerLFG.html
 	http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
-	Copyright © 2010 Alyssa "Phanx" Kinley
+	Copyright © 2010 Phanx
 
 	I, the copyright holder of this work, hereby release it into the
 	public domain. This applies worldwide.
