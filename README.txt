@@ -1,14 +1,18 @@
 
---	ConfirmLeaveParty  -------------------------------------------------
+--	Broker_LFG  --------------------------------------------------------
 
 	by Phanx < addons@phanx.net >
-	http://www.wowinterface.com/downloads/info16776-ConfirmLeaveParty.html
-	http://wow.curse.com/downloads/wow-addons/details/confirmleaveparty.aspx
+	http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
+	http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
 
 --  Description  -------------------------------------------------------
 
-	Asks for confirmation when you attempt to leave a party or raid
-	group while you are in a PvE instance.
+	DataBroker clone of the default UI's LFG minimap button.
+
+	It provides all the same functionality as the default UI button,
+	with the addition of being visible even while you aren't using the
+	LFG system, at which time it can be clicked on to open the LFD/LFR
+	window.
 
 --  Usage  -------------------------------------------------------------
 
