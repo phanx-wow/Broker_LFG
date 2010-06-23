@@ -25,7 +25,7 @@ local iconCoords = setmetatable({}, { __index = function(t, i)
 	local B = ceil(i / 8) * 0.25
 	local T = B - 0.25
 
-	local c = { L, R, B, T }
+	local c = { L, R, T, B }
 	t[i] = c
 	return c
 end })
