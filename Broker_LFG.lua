@@ -54,7 +54,7 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				local screenHalf = GetScreenHalf()
 				MiniMapLFGFrameDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
 				MiniMapLFGFrameDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
-				ToggleDropDownMenu(1, nil, MiniMapLFGFrameDropDown, self:GetName(), 0, 0)
+				ToggleDropDownMenu(1, nil, MiniMapLFGFrameDropDown, self:GetName() or self, 0, 0)
 			elseif mode == "proposal" then
 				if not LFDDungeonReadyPopup:IsShown() then
 					PlaySound("igCharacterInfoTab")
