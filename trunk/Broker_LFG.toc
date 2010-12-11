@@ -1,5 +1,5 @@
 ## Interface: 40000
-## Version: 4.0.1.wowi:revision
+## Version: 4.0.3.wowi:revision
 
 ## Title: Broker LFG
 ## Notes: DataBroker clone of the default UI's LFG button.
@@ -7,7 +7,7 @@
 ## X-Email: addons@phanx.net
 ## X-License: Public Domain
 ## X-Website: http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
-## X-Curse-Project-ID: broker-lfg
+## X-Curse-Project-Name: broker-lfg
 ## X-WoWI-ID: 16710
 
 ## OptionalDependencies: LibDataBroker-1.1
