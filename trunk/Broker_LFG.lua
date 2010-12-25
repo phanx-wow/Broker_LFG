@@ -2,7 +2,8 @@
 	Broker_LFG
 	DataBroker clone of the default UI's LFG button.
 	by Phanx < addons@phanx.net >
-	http://www.wowinterface.com/downloads/info-BrokerLFG.html
+	Currently maintained by Akkorian < akkorian@hotmail.com >
+	http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
 	http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
 
 	Copyright © 2010 Phanx.
@@ -11,6 +12,28 @@
 	grant anyone the right to use this work for any purpose, without any
 	conditions, unless such conditions are required by law.
 ----------------------------------------------------------------------]]
+
+CLICK_TO_LEARN = "Click to learn skill";
+ITEM_OPENABLE = "<Right Click to Open>";
+BINDING_NAME_TOGGLELFGPARENT = "Toggle Dungeon Finder Frame";
+BINDING_NAME_TOGGLELFRPARENT = "Toggle Raid Browser";
+
+local LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR, locale = "LFG", "Click to toggle the Dungeon Finder window.", "Right-click to toggle the Raid Browser window.", GetLocale()
+if locale == "deDE" then
+	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "SNG", "Zum Dungeonbrowser aktivieren klicken", "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
+elseif locale == "esES" or locale == "esMX" then
+	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "BDG", "Haz clic para nostrar/ocultar panel buscador de mazmorras", "Haz clic derecho para mostrar/ocultar Buscador de banda"
+elseif locale == "frFR" then
+	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "RdG", "Cliquer pour afficher/fermer cadre des donjons", "Clic droit pour afficher/fermer la recherche de raid"
+elseif locale == "ruRU" then
+	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "ЛФГ", "Щелкните, окно поиска подземелий", "Щелкните правой кнопкой мыши, активировать список рейдов"
+elseif locale == "koKR" then
+--	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+elseif locale == "zhCN" then
+--	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+elseif locale == "zhTW" then
+--	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+end
 
 MiniMapLFGFrame:Hide()
 MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
@@ -42,7 +65,7 @@ local BrokerLFG = CreateFrame("Frame")
 BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	type = "launcher",
 	icon = "Interface\\LFGFrame\\LFG-Eye",
-	label = "LFG",
+	label = LFG,
 	iconCoords = iconCoords[1],
 	OnClick = function(self, button)
 		local mode = GetLFGMode()
@@ -103,8 +126,8 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText("Broker LFG")
-			GameTooltip:AddLine("Click to open the Dungeon Finder window.")
-			GameTooltip:AddLine("Right-click to open the Raid Browser window.")
+			GameTooltip:AddLine(CLICK_TOGGLE_LFD)
+			GameTooltip:AddLine(CLICK_TOGGLE_LFR)
 			GameTooltip:Show()
 		end
 	end,

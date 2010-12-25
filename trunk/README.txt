@@ -1,8 +1,10 @@
 ## Broker_LFG
 
 * by Phanx < addons@phanx.net >
+* Currently maintained by Akkorian < akkorian@hotmail.com >
 * http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
 * http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
+
 
 ## Description
 
@@ -12,16 +14,20 @@ It provides all the same functionality as the default UI button, with
 the addition of being visible even while you aren't using the LFG
 system, at which time it can be clicked on to open the LFD/LFR window.
 
+
 ## Usage
 
 There are no options. It "just works".
 
+
 ## Localization
 
-Compatible with all locales.
+Compatible with English, Deutsch, Español, Français, Русский, 한국어,
+简体中文, and 正體中文 game clients.
 
-Translated into English. If you'd like to provide a translation for the
-confirmation message, post a comment on either download page.
+Translated into English, Deutsch, Español, Français, Русский. If you can
+provide translations for any locale, please send me a PM.
+
 
 ## Feedback
 
@@ -31,6 +37,7 @@ or comments.
 
 If you need to contact me privately, you may do by private message
 on either download site, or by email at addons@phanx.net.
+
 
 ## License
 
