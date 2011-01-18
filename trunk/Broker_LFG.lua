@@ -1,12 +1,11 @@
 --[[------------------------------------------------------
 	Broker_LFG
 	DataBroker clone of the default UI's LFG button.
-	by Phanx < addons@phanx.net >
-	Currently maintained by Akkorian < akkorian@hotmail.com >
+	by Phanx <addons@phanx.net>
 	http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
 	http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
 
-	Copyright © 2010 Phanx.
+	Copyright © 2010–2011 Phanx
 	I, the copyright holder of this work, hereby release it into the public
 	domain. This applies worldwide. In case this is not legally possible: I
 	grant anyone the right to use this work for any purpose, without any
@@ -18,7 +17,9 @@ ITEM_OPENABLE = "<Right Click to Open>";
 BINDING_NAME_TOGGLELFGPARENT = "Toggle Dungeon Finder Frame";
 BINDING_NAME_TOGGLELFRPARENT = "Toggle Raid Browser";
 
-local LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR, locale = "LFG", "Click to toggle the Dungeon Finder window.", "Right-click to toggle the Raid Browser window.", GetLocale()
+local LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "LFG", "Click to toggle the Dungeon Finder window.", "Right-click to toggle the Raid Browser window."
+
+local locale = GetLocale()
 if locale == "deDE" then
 	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "SNG", "Zum Dungeonbrowser aktivieren klicken", "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
 elseif locale == "esES" or locale == "esMX" then
