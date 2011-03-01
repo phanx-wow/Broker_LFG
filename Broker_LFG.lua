@@ -23,7 +23,7 @@ local locale = GetLocale()
 if locale == "deDE" then
 	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "SNG", "Zum Dungeonbrowser aktivieren klicken", "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
 elseif locale == "esES" or locale == "esMX" then
-	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "BDG", "Haz clic para nostrar/ocultar panel buscador de mazmorras", "Haz clic derecho para mostrar/ocultar Buscador de banda"
+	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "BDG", "Haz clic para mostrar/ocultar el buscador de mazmorras", "Haz clic derecho para mostrar/ocultar el buscador de banda"
 elseif locale == "frFR" then
 	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "RdG", "Cliquer pour afficher/fermer cadre des donjons", "Clic droit pour afficher/fermer la recherche de raid"
 elseif locale == "ruRU" then
