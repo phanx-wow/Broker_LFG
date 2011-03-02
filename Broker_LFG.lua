@@ -12,32 +12,42 @@
 	conditions, unless such conditions are required by law.
 ----------------------------------------------------------------------]]
 
-CLICK_TO_LEARN = "Click to learn skill";
-ITEM_OPENABLE = "<Right Click to Open>";
-BINDING_NAME_TOGGLELFGPARENT = "Toggle Dungeon Finder Frame";
-BINDING_NAME_TOGGLELFRPARENT = "Toggle Raid Browser";
-
-local LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "LFG", "Click to toggle the Dungeon Finder window.", "Right-click to toggle the Raid Browser window."
+local LFG = "LFG"
+local CLICK_TOGGLE_LFD = "Click to toggle the Dungeon Finder window."
+local CLICK_TOGGLE_LFR = "Right-click to toggle the Raid Browser window."
 
 local locale = GetLocale()
 if locale == "deDE" then
-	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "SNG", "Zum Dungeonbrowser aktivieren klicken", "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
+	LFG = "SNG"
+	CLICK_TOGGLE_LFD = "Zum Dungeonbrowser aktivieren klicken"
+	CLICK_TOGGLE_LFR = "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
 elseif locale == "esES" or locale == "esMX" then
-	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "BDG", "Haz clic para mostrar/ocultar el buscador de mazmorras", "Haz clic derecho para mostrar/ocultar el buscador de banda"
+	LFG = "BDG"
+	CLICK_TOGGLE_LFD = "Haz clic para mostrar/ocultar el buscador de mazmorras"
+	CLICK_TOGGLE_LFR = "Haz clic derecho para mostrar/ocultar el buscador de banda"
 elseif locale == "frFR" then
-	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "RdG", "Cliquer pour afficher/fermer cadre des donjons", "Clic droit pour afficher/fermer la recherche de raid"
+	LFG = "RdG"
+	CLICK_TOGGLE_LFD = "Cliquer pour afficher/fermer cadre des donjons"
+	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid"
 elseif locale == "ruRU" then
-	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "ЛФГ", "Щелкните, окно поиска подземелий", "Щелкните правой кнопкой мыши, активировать список рейдов"
+	LFG = "ЛФГ"
+	CLICK_TOGGLE_LFD = "Щелкните, окно поиска подземелий"
+	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, активировать список рейдов"
 elseif locale == "koKR" then
---	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+--	LFG = ""
+--	CLICK_TOGGLE_LFD = ""
+--	CLICK_TOGGLE_LFR = ""
 elseif locale == "zhCN" then
---	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+--	LFG = ""
+--	CLICK_TOGGLE_LFD = ""
+--	CLICK_TOGGLE_LFR = ""
 elseif locale == "zhTW" then
---	LFG, CLICK_TOGGLE_LFD, CLICK_TOGGLE_LFR = "", "", ""
+--	LFG = ""
+--	CLICK_TOGGLE_LFD = ""
+--	CLICK_TOGGLE_LFR = ""
 end
 
-MiniMapLFGFrame:Hide()
-MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
+------------------------------------------------------------------------
 
 local iconCoords = setmetatable({}, { __index = function(t, i)
 	if type(i) ~= "number" then i = 1 end
@@ -60,6 +70,8 @@ local function GetScreenHalf()
 		return "BOTTOM"
 	end
 end
+
+------------------------------------------------------------------------
 
 local BrokerLFG = CreateFrame("Frame")
 
@@ -138,6 +150,8 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	end,
 })
 
+------------------------------------------------------------------------
+
 local currentFrame = 1
 
 local counter = 0
@@ -168,3 +182,6 @@ BrokerLFG:RegisterEvent("LFG_UPDATE")
 BrokerLFG:RegisterEvent("PLAYER_ENTERING_WORLD")
 BrokerLFG:RegisterEvent("LFG_ROLE_CHECK_UPDATE")
 BrokerLFG:RegisterEvent("LFG_PROPOSAL_UPDATE")
+
+MiniMapLFGFrame:Hide()
+MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
