@@ -19,28 +19,28 @@ local CLICK_TOGGLE_LFR = "Right-click to toggle the Raid Browser window."
 local locale = GetLocale()
 if locale == "deDE" then
 	LFG = "SNG"
-	CLICK_TOGGLE_LFD = "Zum Dungeonbrowser aktivieren klicken"
-	CLICK_TOGGLE_LFR = "Zum Schlachtzugsbrowser aktivieren rechtsklicken"
+	CLICK_TOGGLE_LFD = "Zum Dungeonbrowser aktivieren klicken."
+	CLICK_TOGGLE_LFR = "Zum Schlachtzugsbrowser aktivieren rechtsklicken."
 elseif locale == "esES" or locale == "esMX" then
 	LFG = "BDG"
-	CLICK_TOGGLE_LFD = "Haz clic para mostrar/ocultar el buscador de mazmorras"
-	CLICK_TOGGLE_LFR = "Haz clic derecho para mostrar/ocultar el buscador de banda"
+	CLICK_TOGGLE_LFD = "Haz clic para mostrar/ocultar el buscador de mazmorras."
+	CLICK_TOGGLE_LFR = "Haz clic derecho para mostrar/ocultar el buscador de banda."
 elseif locale == "frFR" then
 	LFG = "RdG"
-	CLICK_TOGGLE_LFD = "Cliquer pour afficher/fermer cadre des donjons"
-	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid"
+	CLICK_TOGGLE_LFD = "Cliquer pour afficher/fermer cadre des donjons."
+	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid."
 elseif locale == "ruRU" then
 	LFG = "ЛФГ"
-	CLICK_TOGGLE_LFD = "Щелкните, окно поиска подземелий"
-	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, активировать список рейдов"
+	CLICK_TOGGLE_LFD = "Щелкните, окно поиска подземелий."
+	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, активировать список рейдов."
 elseif locale == "koKR" then
 --	LFG = ""
 --	CLICK_TOGGLE_LFD = ""
 --	CLICK_TOGGLE_LFR = ""
-elseif locale == "zhCN" then
+elseif locale == "zhCN" then -- Last updated 2011-03-04 by tss1398383123 @ CurseForge
 --	LFG = ""
---	CLICK_TOGGLE_LFD = ""
---	CLICK_TOGGLE_LFR = ""
+	CLICK_TOGGLE_LFD = "左键点击进入FB工具窗口。"
+	CLICK_TOGGLE_LFR = "右键点击进入团队浏览器窗口。"
 elseif locale == "zhTW" then
 --	LFG = ""
 --	CLICK_TOGGLE_LFD = ""
