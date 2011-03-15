@@ -31,8 +31,8 @@ elseif locale == "frFR" then
 	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid."
 elseif locale == "ruRU" then
 	LFG = "ЛФГ"
-	CLICK_TOGGLE_LFD = "Щелкните, окно поиска подземелий."
-	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, активировать список рейдов."
+	CLICK_TOGGLE_LFD = "Щелкните, чтобы открыть окно поиска подземелий."
+	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, чтобы открыть список рейдов."
 elseif locale == "koKR" then
 --	LFG = ""
 --	CLICK_TOGGLE_LFD = ""
