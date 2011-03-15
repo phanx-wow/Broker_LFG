@@ -7,7 +7,7 @@
 ## X-Email: addons@phanx.net
 ## X-License: Public Domain
 ## X-CompatibleLocales: deDE, enUS, enGB, esES, esMX, frFR, koKR, ruRU, zhCN, zhTW
-## X-Localizations: deDE, enUS, enGB, esES, esMX, frFR, ruRU
+## X-Localizations: deDE, enUS, enGB, esES, esMX, frFR, ruRU, zhCN
 ## X-Website: http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 ## X-Curse-Project-Name: broker-lfg
 ## X-WoWI-ID: 16710

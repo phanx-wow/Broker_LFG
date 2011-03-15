@@ -2,6 +2,7 @@ Broker_LFG
 ==========
 
 * by Phanx <addons@phanx.net>
+* Maintained by Akkorian <akkorian@hotmail.com>
 * http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
 * http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
 
@@ -25,11 +26,14 @@ There are no options. It “just works”.
 Localization
 ------------
 
-Compatible with English, Deutsch, Español, Français, Русский, 한국어,
-简体中文, and 正體中文 game clients.
+Compatible with English, Deutsch, Español, Français, Русский, 한국어, 简体中文,
+and 正體中文 game clients.
 
-Translated into English, Deutsch, Español, Français, Русский. If you can
-provide translations for any locale, please send me a PM.
+Translated into English, Deutsch, Español, Français, Русский, and 简体中文.
+If you can provide translations for any locale, please send me a PM or
+visit the Localization tab on the CurseForge project page:
+
+http://wow.curseforge.com/addons/broker-lfg/localization/
 
 
 Feedback
