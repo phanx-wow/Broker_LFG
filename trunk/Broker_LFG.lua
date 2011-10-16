@@ -29,6 +29,10 @@ elseif locale == "frFR" then
 	LFG = "RdG"
 	CLICK_TOGGLE_LFD = "Cliquer pour afficher/fermer cadre des donjons."
 	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid."
+elseif locale == "ptBR" then
+--	LFG = ""
+--	CLICK_TOGGLE_LFD = ""
+--	CLICK_TOGGLE_LFR = ""
 elseif locale == "ruRU" then
 	LFG = "ЛФГ"
 	CLICK_TOGGLE_LFD = "Щелкните, чтобы открыть окно поиска подземелий."
@@ -146,7 +150,7 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	end,
 	OnLeave = function(self)
 		GameTooltip:Hide()
-		LFDSearchStatus:Hide()
+		(LFGSearchStatus or LFDSearchStatus):Hide()
 	end,
 })
 
