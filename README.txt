@@ -26,8 +26,8 @@ There are no options. It “just works”.
 Localization
 ------------
 
-Compatible with English, Deutsch, Español, Français, Русский, 한국어, 简体中文,
-and 正體中文 game clients.
+Compatible with English, Deutsch, Español, Français, Português, Русский,
+한국어, 简体中文, and 正體中文 game clients.
 
 Translated into English, Deutsch, Español, Français, Русский, and 简体中文.
 If you can provide translations for any locale, please send me a PM or
