@@ -98,13 +98,13 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 					PlaySound("igCharacterInfoTab")
 					StaticPopupSpecial_Show(LFDDungeonReadyPopup)
 				end
-			elseif mode == "queued" or mode == "rolecheck" then
+			elseif mode == "queued" or mode == "rolecheck" or mode == "suspended" then
 				ToggleLFDParentFrame()
 			elseif mode == "listed" then
-				ToggleLFRParentFrame()
+				ToggleFriendsFrame(4)
 			end
 		elseif button == "RightButton" then
-			ToggleLFRParentFrame()
+			ToggleFriendsFrame(4)
 		else
 			ToggleLFDParentFrame()
 		end
@@ -139,6 +139,27 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText(LOOKING_FOR_DUNGEON)
 			GameTooltip:AddLine(YOU_ARE_IN_DUNGEON_GROUP, NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1)
+
+			local dungeon = GetPartyLFGID()
+			local encounters, completed = GetLFGDungeonNumEncounters(dungeon)
+			if completed > 0 then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(string.format(BOSSES_KILLED, completed, encounters))
+				for i = 1, encounters do
+					local boss, _, killed = GetLFGDungeonEncounterInfo(dungeon, i)
+					if killed then
+						GameTooltip:AddLine(boss, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b)
+					else
+						GameTooltip:AddLine(boss, NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b)
+					end
+				end
+			end
+
+			GameTooltip:Show()
+		elseif mode == "suspended" then
+			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
+			GameTooltip:SetText(LOOKING_FOR_DUNGEON)
+			GameTooltip:AddLine(IN_LFG_QUEUE_BUT_SUSPENDED, nil, nil, nil, 1)
 			GameTooltip:Show()
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
@@ -150,7 +171,8 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	end,
 	OnLeave = function(self)
 		GameTooltip:Hide()
-		(LFGSearchStatus or LFDSearchStatus):Hide()
+		local f = LFGSearchStatus or LFDSearchStatus
+		f:Hide()
 	end,
 })
 
