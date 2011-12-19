@@ -4,7 +4,7 @@ Broker_LFG
 * by Phanx <addons@phanx.net>
 * Maintained by Akkorian <akkorian@hotmail.com>
 * http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
-* http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
+* http://www.curse.com/addons/wow/broker-lfg
 
 
 Description
