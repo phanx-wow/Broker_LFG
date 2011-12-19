@@ -3,7 +3,7 @@
 	DataBroker clone of the default UI's LFG button.
 	by Phanx <addons@phanx.net>
 	http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
-	http://wow.curse.com/downloads/wow-addons/details/broker-lfg.aspx
+	http://www.curse.com/addons/wow/broker-lfg
 
 	Copyright © 2010–2011 Phanx
 	I, the copyright holder of this work, hereby release it into the public
