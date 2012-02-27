@@ -128,7 +128,7 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 			LFGSearchStatus:SetClampedToScreen(true)
 			LFGSearchStatus:ClearAllPoints()
 			LFGSearchStatus:SetPoint(screenHalf, self, screenHalf == "TOP" and "BOTTOM" or "TOP")
-			LFGSearchStatus:SetFrameLevel("TOOLTIP")
+			LFGSearchStatus:SetFrameStrata("TOOLTIP")
 			LFGSearchStatus:Show()
 		elseif mode == "proposal" then
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
