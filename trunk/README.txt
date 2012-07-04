@@ -1,37 +1,31 @@
 Broker_LFG
 ==========
 
-* by Phanx <addons@phanx.net>
-* Maintained by Akkorian <akkorian@hotmail.com>
-* http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
-* http://www.curse.com/addons/wow/broker-lfg
+Broker_LFG is a basic LFG launcher button for your DataBroker display.
 
+While you are in a Dungeon Finder, Raid Finder, Scenario Finder, or
+Battleground queue or group, you can click the icon to open the queue
+panel, or right-click the icon to access the LFG action menu (leave
+queue, teleport to dungeon, etc), or hover over the icon to see your
+current queue/group status.
 
-Description
------------
+While you are not in a queue or LFG group, left-click the window to open
+the Dungeon Finder window, right-click to open the Raid Finder window,
+and middle-click or shift-click to open the Scenarios window.
 
-Broker_LFG is a DataBroker clone of the default UI’s LFG minimap button.
-
-It provides all the same functionality as the default UI button, with
-the addition of being visible even while you aren’t using the LFG
-system, at which time it can be clicked on to open the LFD/LFR window.
-
-
-Usage
------
-
-There are no options. It “just works”.
+There are no options. It "just works".
 
 
 Localization
 ------------
 
-Compatible with English, Deutsch, Español, Français, Português, Русский,
-한국어, 简体中文, and 正體中文 game clients.
+Compatible with English, Deutsch, Español (EU), Español (AL), Français,
+Italiano, Português, Русский, 한국어, 简体中文, and 正體中文 game clients.
 
 Translated into English, Deutsch, Español, Français, Русский, and 简体中文.
-If you can provide translations for any locale, please send me a PM or
-visit the Localization tab on the CurseForge project page:
+
+To add or update translations for any language, see the Localization tab
+on the CurseForge project page:
 
 http://wow.curseforge.com/addons/broker-lfg/localization/
 
@@ -39,18 +33,24 @@ http://wow.curseforge.com/addons/broker-lfg/localization/
 Feedback
 --------
 
-Please use the ticket system on either download site report bugs or
-request features. Use the comment system only for general questions
-or comments.
+Bugs, errors, or other problems:
+	Please use the ticket system on either download page.
 
-If you need to contact me privately, you may do by private message
-on either download site, or by email at <addons@phanx.net>.
+Feature requests or other suggestions:
+	Please use the ticket system on either download page.
+
+General questions or comments:
+	Post a comment on either download page.
+
+If you need to contact me privately for a reason other than those listed
+above, you can send me a private message on either download site, or
+email me at <addons@phanx.net>.
 
 
 License
 -------
 
-Copyright © 2010–2011 Phanx
+Copyright © 2010–2012 Phanx
 
 I, the copyright holder of this work, hereby release it into the public
 domain. This applies worldwide. In case this is not legally possible: I
