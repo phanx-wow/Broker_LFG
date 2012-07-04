@@ -1,12 +1,13 @@
-## Interface: 40300
-## Version: 4.3.2.wowi:revision
+## Interface: 50001
+## Version: 5.0.1.wowi:revision
 
 ## Title: Broker: LFG
-## Notes: DataBroker clone of the default UI's LFG button.
+## Notes: Basic LFG button for your DataBroker display.
 ## Author: Phanx
 ## X-Email: addons@phanx.net
+## X-Copyright: Copyright (c) 2010-2012 Phanx.
 ## X-License: Public Domain
-## X-CompatibleLocales: deDE, enUS, enGB, esES, esMX, frFR, ptBR, koKR, ruRU, zhCN, zhTW
+## X-CompatibleLocales: deDE, enUS, enGB, esES, esMX, frFR, itIT, ptBR, koKR, ruRU, zhCN, zhTW
 ## X-Localizations: deDE, enUS, enGB, esES, esMX, frFR, ruRU, zhCN
 ## X-Website: http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 ## X-Curse-Project-Name: broker-lfg

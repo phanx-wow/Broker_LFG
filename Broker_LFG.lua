@@ -1,11 +1,12 @@
 --[[------------------------------------------------------
 	Broker_LFG
 	DataBroker clone of the default UI's LFG button.
-	by Phanx <addons@phanx.net>
-	http://www.wowinterface.com/downloads/info16710-Broker_LFG.html
+	Written by Phanx <addons@phanx.net>
+	See the accompanying README file for more information.
+	http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 	http://www.curse.com/addons/wow/broker-lfg
 
-	Copyright © 2010–2011 Phanx
+	Copyright © 2010–2012 Phanx
 	I, the copyright holder of this work, hereby release it into the public
 	domain. This applies worldwide. In case this is not legally possible: I
 	grant anyone the right to use this work for any purpose, without any
@@ -13,42 +14,56 @@
 ----------------------------------------------------------------------]]
 
 local LFG = "LFG"
-local CLICK_TOGGLE_LFD = "Click to toggle the Dungeon Finder window."
-local CLICK_TOGGLE_LFR = "Right-click to toggle the Raid Browser window."
+local CLICK_TOGGLE_DUNGEONS = "Click to toggle the Dungeon Finder window."
+local CLICK_TOGGLE_RAIDS = "Right-click to toggle the Raid Browser window."
+local CLICK_TOGGLE_SCENARIOS = "Middle-click or shift-click to toggle the Scenarios window."
 
 local locale = GetLocale()
 if locale == "deDE" then
 	LFG = "SNG"
-	CLICK_TOGGLE_LFD = "Zum Dungeonbrowser aktivieren klicken."
-	CLICK_TOGGLE_LFR = "Zum Schlachtzugsbrowser aktivieren rechtsklicken."
+	CLICK_TOGGLE_DUNGEONS = "Klicken, um Dungeonbrowser aktivieren."
+	CLICK_TOGGLE_RAIDS = "Rechtsklicken, um Schlachtzugsbrowser aktivieren."
+	CLICK_TOGGLE_SCENARIOS = "Mittleren klicken oder Shift-klicken, um Szenarienfenster aktivieren."
 elseif locale == "esES" or locale == "esMX" then
 	LFG = "BDG"
-	CLICK_TOGGLE_LFD = "Haz clic para mostrar/ocultar el buscador de mazmorras."
-	CLICK_TOGGLE_LFR = "Haz clic derecho para mostrar/ocultar el buscador de banda."
+	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar/ocultar el panel Buscador de calabozos."
+	CLICK_TOGGLE_RAIDS = "Haz clic derecho para mostrar/ocultar el panel Buscador de bandas."
+	CLICK_TOGGLE_SCENARIOS = "Haz clic media o Mayús+clic para mostrar/ocultar el panel Gestas"
 elseif locale == "frFR" then
 	LFG = "RdG"
-	CLICK_TOGGLE_LFD = "Cliquer pour afficher/fermer cadre des donjons."
-	CLICK_TOGGLE_LFR = "Clic droit pour afficher/fermer la recherche de raid."
+	CLICK_TOGGLE_DUNGEONS = "Cliquer pour afficher/fermer la fenêtre Donjons."
+	CLICK_TOGGLE_RAIDS = "Clic droit pour afficher/fermer la la fenêtre Raids."
+	CLICK_TOGGLE_SCENARIOS = "Clic milieu ou clic-maj pour afficher/fermer la fenêtre Scénarios."
+elseif locale == "itIT" then
+--	LFG = ""
+--	CLICK_TOGGLE_DUNGEONS = ""
+--	CLICK_TOGGLE_RAIDS = ""
+--	CLICK_TOGGLE_SCENARIOS = ""
 elseif locale == "ptBR" then
-	LFG = ""
-	CLICK_TOGGLE_LFD = "Clique para mostrar/ocultar o painel localizador de masmorras."
-	CLICK_TOGGLE_LFR = "Clique com o botão direito do mouse para mostrar/ocultar o painel localizador de raides"
+--	LFG = ""
+	CLICK_TOGGLE_DUNGEONS = "Clique para mostrar/ocultar o painel localizador de masmorras."
+	CLICK_TOGGLE_RAIDS = "Clique com o botão direito do mouse para mostrar/ocultar o painel localizador de raides"
+--	CLICK_TOGGLE_SCENARIOS = ""
 elseif locale == "ruRU" then
 	LFG = "ЛФГ"
-	CLICK_TOGGLE_LFD = "Щелкните, чтобы открыть окно поиска подземелий."
-	CLICK_TOGGLE_LFR = "Щелкните правой кнопкой мыши, чтобы открыть список рейдов."
+	CLICK_TOGGLE_DUNGEONS = "Щелкните, чтобы открыть окно поиска подземелий."
+	CLICK_TOGGLE_RAIDS = "Щелкните правой кнопкой мыши, чтобы открыть список рейдов."
+--	CLICK_TOGGLE_SCENARIOS = ""
 elseif locale == "koKR" then
 --	LFG = ""
---	CLICK_TOGGLE_LFD = ""
---	CLICK_TOGGLE_LFR = ""
+--	CLICK_TOGGLE_DUNGEONS = ""
+--	CLICK_TOGGLE_RAIDS = ""
+--	CLICK_TOGGLE_SCENARIOS = ""
 elseif locale == "zhCN" then -- Last updated 2011-03-04 by tss1398383123 @ CurseForge
 --	LFG = ""
-	CLICK_TOGGLE_LFD = "左键点击进入FB工具窗口。"
-	CLICK_TOGGLE_LFR = "右键点击进入团队浏览器窗口。"
+	CLICK_TOGGLE_DUNGEONS = "左键点击进入FB工具窗口。"
+	CLICK_TOGGLE_RAIDS = "右键点击进入团队浏览器窗口。"
+--	CLICK_TOGGLE_SCENARIOS = ""
 elseif locale == "zhTW" then
 --	LFG = ""
---	CLICK_TOGGLE_LFD = ""
---	CLICK_TOGGLE_LFR = ""
+--	CLICK_TOGGLE_DUNGEONS = ""
+--	CLICK_TOGGLE_RAIDS = ""
+--	CLICK_TOGGLE_SCENARIOS = ""
 end
 
 ------------------------------------------------------------------------
@@ -72,6 +87,47 @@ end
 
 ------------------------------------------------------------------------
 
+-- see LFG_CATEGORY_NAMES in Constants.lua
+local queueType = {
+	"dungeon",	-- Dungeon Finder
+	"raid",		-- Other Raids
+	"raid",		-- Raid Finder
+	"scenario"	-- Scenarios
+}
+
+local queueFrames = {
+	LFDParentFrame,
+	RaidFinderFrame,
+	RaidFinderFrame,
+	ScenarioFinderFrame
+}
+
+-- see QueueStatusFrame_Update in QueueStatusFrame.lua
+local function GetQueueInfo()
+	for i = 1, NUM_LE_LFG_CATEGORYS do -- FFS Blizz, learn to spell.
+		local mode, submode = GetLFGMode(i)
+		if mode then
+			return queueType[i], mode, submode
+		end
+	end
+
+	for i = 1, GetMaxBattlefieldID() do
+		local status = GetBattlefieldStatus(i)
+		if status == "queued" then
+			return "pvp", "queued"
+		end
+	end
+
+	for i = 1, MAX_WORLD_PVP_QUEUES do
+		lcoal status = GetWorldPVPQueueStatus(i)
+		if status == "queued" then
+			return "pvp", "queued"
+		end
+	end
+end
+
+------------------------------------------------------------------------
+
 local function GetScreenHalf()
 	local _, y = GetCursorPosition()
 	if y * 2 > UIParent:GetHeight() then
@@ -91,45 +147,44 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	label = LFG,
 	iconCoords = LFG_EYE_TEXTURES.default.iconCoords[1],
 	OnClick = function(self, button)
-		local mode = GetLFGMode()
+		local queueType, mode, submode = GetQueueInfo()
 		if mode then
 			if button == "RightButton" or mode == "lfgparty" or mode == "abandonedInDungeon" then
 				PlaySound("igMainMenuOpen")
 				local screenHalf = GetScreenHalf()
 				MiniMapLFGFrameDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
 				MiniMapLFGFrameDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
-				ToggleDropDownMenu(1, nil, MiniMapLFGFrameDropDown, self:GetName() or self, 0, 0)
-			elseif mode == "proposal" then
-				if not LFGDungeonReadyPopup:IsShown() then
-					PlaySound("igCharacterInfoTab")
-					StaticPopupSpecial_Show(LFDGungeonReadyPopup)
-				end
-			elseif mode == "queued" or mode == "rolecheck" or mode == "suspended" then
-				if select(8, GetLFGInfoServer()) then
-					ToggleRaidFrame(1)
-				else
-					ToggleLFDParentFrame()
-				end
-			elseif mode == "listed" then
-				ToggleFriendsFrame(4)
+				ToggleDropDownMenu(1, nil, QueueStatusMinimapButtonDropDown, self:GetName() or self, 0, 0)
+			else
+				PVEFrame_ToggleFrame("GroupFinderFrame", queueFrames[queueType])
 			end
+		elseif button == "MiddleButton" or IsShiftKeyDown() then
+			PVEFrame_ToggleFrame("GroupFinderFrame", LFDParentFrame)
 		elseif button == "RightButton" then
-			ToggleRaidFrame(1)
+			PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame)
 		else
-			ToggleLFDParentFrame()
+			PVEFrame_ToggleFrame("GroupFinderFrame", ScenarioFinderFrame)
 		end
 	end,
 	OnEnter = function(self)
-		local mode, submode = GetLFGMode()
-		local queueType = GetLFGModeType()
+		local queueType, mode, submode = GetQueueInfo()
+		if mode then
+			local screenHalf = GetScreenHalf()
+			QueueStatusFrame:SetParent(UIParent)
+			QueueStatusFrame:SetClampedToScreen(true)
+			QueueStatusFrame:ClearAllPoints()
+			QueueStatusFrame:SetPoint(screenHalf, self, screenHalf == "TOP" and "BOTTOM" or "TOP")
+			QueueStatusFrame:SetFrameStrata("TOOLTIP")
+			QueueStatusFrame:Show()
+	--[[
 		if mode == "queued" then
 			local screenHalf = GetScreenHalf()
-			LFGSearchStatus:SetParent(UIParent)
-			LFGSearchStatus:SetClampedToScreen(true)
-			LFGSearchStatus:ClearAllPoints()
-			LFGSearchStatus:SetPoint(screenHalf, self, screenHalf == "TOP" and "BOTTOM" or "TOP")
-			LFGSearchStatus:SetFrameStrata("TOOLTIP")
-			LFGSearchStatus:Show()
+			QueueStatusFrame:SetParent(UIParent)
+			QueueStatusFrame:SetClampedToScreen(true)
+			QueueStatusFrame:ClearAllPoints()
+			QueueStatusFrame:SetPoint(screenHalf, self, screenHalf == "TOP" and "BOTTOM" or "TOP")
+			QueueStatusFrame:SetFrameStrata("TOOLTIP")
+			QueueStatusFrame:Show()
 		elseif mode == "proposal" then
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText(queueType == "raid" and RAID_FINDER or LOOKING_FOR_DUNGEON)
@@ -173,17 +228,19 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 			GameTooltip:SetText(queueType == "raid" and RAID_FINDER or LOOKING_FOR_DUNGEON)
 			GameTooltip:AddLine(IN_LFG_QUEUE_BUT_SUSPENDED, nil, nil, nil, 1)
 			GameTooltip:Show()
+	]]
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText("Broker LFG")
-			GameTooltip:AddLine(CLICK_TOGGLE_LFD)
-			GameTooltip:AddLine(CLICK_TOGGLE_LFR)
+			GameTooltip:AddLine(CLICK_TOGGLE_DUNGEONS)
+			GameTooltip:AddLine(CLICK_TOGGLE_RAIDS)
+			GameTooltip:AddLine(CLICK_TOGGLE_SCENARIOS)
 			GameTooltip:Show()
 		end
 	end,
 	OnLeave = function(self)
+		QueueStatusFrame:Hide()
 		GameTooltip:Hide()
-		LFGSearchStatus:Hide()
 	end,
 })
 
@@ -202,23 +259,22 @@ local function UpdateIconCoords(self, elapsed)
 	if counter > updateDelay then
 		if currentFrame > currentIcon.frames then
 			currentFrame = 1
-		end		
+		end
 		self.feed.iconCoords = iconCoords[currentFrame] or iconCoords[1]
 		currentFrame = currentFrame + 1
 		counter = 0
 	end
 end
 
+------------------------------------------------------------------------
+
 BrokerLFG:SetScript("OnEvent", function(self, event)
-	local mode = GetLFGMode()
-	local queueType
-	if mode then
-		if mode == "queued" and not GetLFGQueueStats() then
-			queueType = "unknown"
-		else
-			queueType = GetLFGModeType()
-		end
+	local queueType, mode, submode = GetQueueInfo()
+
+	if mode == "queued" and not GetLFGQueueStats() then
+		queueType = "unknown"
 	end
+
 	if queueType ~= currentQueueType then
 		currentQueueType = queueType
 		currentIcon = LFG_EYE_TEXTURES[queueType] or LFG_EYE_TEXTURES.default
@@ -226,7 +282,8 @@ BrokerLFG:SetScript("OnEvent", function(self, event)
 		updateDelay = currentIcon.delay
 		self.feed.icon = currentIcon.file
 	end
-	if mode == "queued" or mode == "listed" or mode == "rolecheck" or mode == "suspended" then
+
+	if mode == "queued" then
 		currentFrame = 1
 		self:SetScript("OnUpdate", UpdateIconCoords)
 	else
@@ -236,10 +293,9 @@ BrokerLFG:SetScript("OnEvent", function(self, event)
 	end
 end)
 
-BrokerLFG:RegisterEvent("LFG_UPDATE")
-BrokerLFG:RegisterEvent("PLAYER_ENTERING_WORLD")
-BrokerLFG:RegisterEvent("LFG_ROLE_CHECK_UPDATE")
-BrokerLFG:RegisterEvent("LFG_PROPOSAL_UPDATE")
+QueueStatusFrame_OnLoad(Broker_LFG) -- Register all useful events.
+Broker_LFG.StatusEntries = nil -- Clean up.
 
-MiniMapLFGFrame:Hide()
-MiniMapLFGFrame.Show = MiniMapLFGFrame.Hide
+-- Hide default minimap button.
+QueueStatusMinimapButton:Hide()
+QueueStatusMinimapButton.Show = QueueStatusMinimapButton.Hide
