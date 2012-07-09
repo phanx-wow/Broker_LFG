@@ -88,7 +88,7 @@ end
 ------------------------------------------------------------------------
 
 -- see LFG_CATEGORY_NAMES in Constants.lua
-local queueType = {
+local queueTypes = {
 	"dungeon",	-- Dungeon Finder
 	"raid",		-- Other Raids
 	"raid",		-- Raid Finder
@@ -107,7 +107,7 @@ local function GetQueueInfo()
 	for i = 1, NUM_LE_LFG_CATEGORYS do -- FFS Blizz, learn to spell.
 		local mode, submode = GetLFGMode(i)
 		if mode then
-			return queueType[i], mode, submode
+			return queueTypes[i], mode, submode, queueTypeIndex
 		end
 	end
 
@@ -119,7 +119,7 @@ local function GetQueueInfo()
 	end
 
 	for i = 1, MAX_WORLD_PVP_QUEUES do
-		lcoal status = GetWorldPVPQueueStatus(i)
+		local status = GetWorldPVPQueueStatus(i)
 		if status == "queued" then
 			return "pvp", "queued"
 		end
@@ -159,11 +159,11 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				PVEFrame_ToggleFrame("GroupFinderFrame", queueFrames[queueType])
 			end
 		elseif button == "MiddleButton" or IsShiftKeyDown() then
-			PVEFrame_ToggleFrame("GroupFinderFrame", LFDParentFrame)
+			PVEFrame_ToggleFrame("GroupFinderFrame", ScenarioFinderFrame)
 		elseif button == "RightButton" then
 			PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame)
 		else
-			PVEFrame_ToggleFrame("GroupFinderFrame", ScenarioFinderFrame)
+			PVEFrame_ToggleFrame("GroupFinderFrame", LFDParentFrame)
 		end
 	end,
 	OnEnter = function(self)
@@ -269,9 +269,9 @@ end
 ------------------------------------------------------------------------
 
 BrokerLFG:SetScript("OnEvent", function(self, event)
-	local queueType, mode, submode = GetQueueInfo()
+	local queueType, mode, submode, queueTypeIndex = GetQueueInfo()
 
-	if mode == "queued" and not GetLFGQueueStats() then
+	if mode == "queued" and queueTypeIndex and not GetLFGQueueStats(queueTypeIndex) then
 		queueType = "unknown"
 	end
 
@@ -293,8 +293,8 @@ BrokerLFG:SetScript("OnEvent", function(self, event)
 	end
 end)
 
-QueueStatusFrame_OnLoad(Broker_LFG) -- Register all useful events.
-Broker_LFG.StatusEntries = nil -- Clean up.
+QueueStatusFrame_OnLoad(BrokerLFG) -- Register all useful events.
+BrokerLFG.StatusEntries = nil -- Clean up.
 
 -- Hide default minimap button.
 QueueStatusMinimapButton:Hide()
