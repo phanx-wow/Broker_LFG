@@ -1,6 +1,7 @@
 Broker_LFG
 ==========
 
+* Copyright © 2010–2012 Phanx <addons@phanx.net>. Public Domain.
 * http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 * http://www.curse.com/addons/wow/broker-lfg
 
