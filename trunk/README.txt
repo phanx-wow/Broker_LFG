@@ -1,6 +1,13 @@
 Broker_LFG
 ==========
 
+* http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
+* http://www.curse.com/addons/wow/broker-lfg
+
+
+Description
+-----------
+
 Broker_LFG is a basic LFG launcher button for your DataBroker display.
 
 While you are in a Dungeon Finder, Raid Finder, Scenario Finder, or
