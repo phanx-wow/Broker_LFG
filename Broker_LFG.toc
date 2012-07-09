@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Version: 5.0.1.wowi:revision
+## Version: 5.0.1.wowi:revision-beta
 
 ## Title: Broker: LFG
 ## Notes: Basic LFG button for your DataBroker display.
