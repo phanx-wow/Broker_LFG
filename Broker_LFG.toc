@@ -5,7 +5,6 @@
 ## Notes: Basic LFG button for your DataBroker display.
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2010-2012 Phanx.
 ## X-License: Public Domain
 ## X-CompatibleLocales: deDE, enUS, enGB, esES, esMX, frFR, itIT, ptBR, koKR, ruRU, zhCN, zhTW
 ## X-Localizations: deDE, enUS, enGB, esES, esMX, frFR, ruRU, zhCN
