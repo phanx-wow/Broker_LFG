@@ -28,10 +28,10 @@ Localization
 ------------
 
 Compatible with English, Deutsch, Español (EU), Español (AL), Français,
-Italiano, Português, Русский, 한국어, 简体中文, and 正體中文 game clients.
+Italiano, Português, Русский, 한국어, 简体中文, and 繁體中文 game clients.
 
 Translated into English, Deutsch, Español, Français, Italiano, Português,
-Русский, 简体中文, and 正體中文.
+Русский, 简体中文, and 繁體中文.
 
 To add or update translations for any language, see the Localization tab
 on the CurseForge project page:
