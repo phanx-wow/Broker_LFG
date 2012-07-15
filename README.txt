@@ -1,7 +1,7 @@
 Broker_LFG
 ==========
 
-* Copyright © 2010–2012 Phanx <addons@phanx.net>. Public Domain.
+* Written by Phanx <addons@phanx.net>
 * http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 * http://www.curse.com/addons/wow/broker-lfg
 
@@ -30,7 +30,8 @@ Localization
 Compatible with English, Deutsch, Español (EU), Español (AL), Français,
 Italiano, Português, Русский, 한국어, 简体中文, and 正體中文 game clients.
 
-Translated into English, Deutsch, Español, Français, Русский, and 简体中文.
+Translated into English, Deutsch, Español, Français, Italiano, Português,
+Русский, 简体中文, and 正體中文.
 
 To add or update translations for any language, see the Localization tab
 on the CurseForge project page:

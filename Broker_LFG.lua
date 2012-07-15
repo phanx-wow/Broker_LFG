@@ -1,16 +1,10 @@
 --[[------------------------------------------------------
 	Broker_LFG
-	DataBroker clone of the default UI's LFG button.
+	Basic LFG button for your DataBroker display.
 	Written by Phanx <addons@phanx.net>
 	See the accompanying README file for more information.
 	http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 	http://www.curse.com/addons/wow/broker-lfg
-
-	Copyright © 2010–2012 Phanx
-	I, the copyright holder of this work, hereby release it into the public
-	domain. This applies worldwide. In case this is not legally possible: I
-	grant anyone the right to use this work for any purpose, without any
-	conditions, unless such conditions are required by law.
 ----------------------------------------------------------------------]]
 
 local LFG = "LFG"
@@ -26,44 +20,44 @@ if locale == "deDE" then
 	CLICK_TOGGLE_SCENARIOS = "Mittleren klicken oder Shift-klicken, um Szenarienfenster aktivieren."
 elseif locale == "esES" or locale == "esMX" then
 	LFG = "BDG"
-	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar/ocultar el panel Buscador de calabozos."
-	CLICK_TOGGLE_RAIDS = "Haz clic derecho para mostrar/ocultar el panel Buscador de bandas."
-	CLICK_TOGGLE_SCENARIOS = "Haz clic media o Mayús+clic para mostrar/ocultar el panel Gestas"
+	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostraro ocultar el panel Buscador de calabozos."
+	CLICK_TOGGLE_RAIDS = "Haz clic derecho para mostraro ocultar el panel Buscador de bandas."
+	CLICK_TOGGLE_SCENARIOS = "Haz clic media o Mayús+clic para mostrar/ocultar el panel Gestas."
 elseif locale == "frFR" then
 	LFG = "RdG"
-	CLICK_TOGGLE_DUNGEONS = "Cliquer pour afficher/fermer la fenêtre Donjons."
-	CLICK_TOGGLE_RAIDS = "Clic droit pour afficher/fermer la la fenêtre Raids."
+	CLICK_TOGGLE_DUNGEONS = "Cliquer pour afficher ou fermer la fenêtre Donjons."
+	CLICK_TOGGLE_RAIDS = "Clic droit pour afficherou fermer la la fenêtre Raids."
 	CLICK_TOGGLE_SCENARIOS = "Clic milieu ou clic-maj pour afficher/fermer la fenêtre Scénarios."
 elseif locale == "itIT" then
---	LFG = ""
---	CLICK_TOGGLE_DUNGEONS = ""
---	CLICK_TOGGLE_RAIDS = ""
---	CLICK_TOGGLE_SCENARIOS = ""
+	LFG = "CG"
+	CLICK_TOGGLE_DUNGEONS = "Clicca per mostrare o nascondere il pannello Ricerca delle istanze."
+	CLICK_TOGGLE_RAIDS = "Clicca col tasto destro per mostrare o nascondere il pannello Ricerca delle incursioni."
+	CLICK_TOGGLE_SCENARIOS = "Clicca col tasto medio o Maiusc-clic per mostrare o nascondere il pannello Scenari."
 elseif locale == "ptBR" then
---	LFG = ""
-	CLICK_TOGGLE_DUNGEONS = "Clique para mostrar/ocultar o painel localizador de masmorras."
-	CLICK_TOGGLE_RAIDS = "Clique com o botão direito do mouse para mostrar/ocultar o painel localizador de raides"
---	CLICK_TOGGLE_SCENARIOS = ""
+	LFG = "PG"
+	CLICK_TOGGLE_DUNGEONS = "Clique para mostrar ou ocultar o painel Localizador de masmorras."
+	CLICK_TOGGLE_RAIDS = "Direito-clique para mostrarou ocultar o painel Localizador de raides."
+	CLICK_TOGGLE_SCENARIOS = "Meio-clique ou shift-clique para mostrarou ocultar o painel Cenários."
 elseif locale == "ruRU" then
-	LFG = "ЛФГ"
-	CLICK_TOGGLE_DUNGEONS = "Щелкните, чтобы открыть окно поиска подземелий."
-	CLICK_TOGGLE_RAIDS = "Щелкните правой кнопкой мыши, чтобы открыть список рейдов."
---	CLICK_TOGGLE_SCENARIOS = ""
+	LFG = "ПГ"
+	CLICK_TOGGLE_DUNGEONS = "Щелкните для открытия окно поиска подземелий."
+	CLICK_TOGGLE_RAIDS = "Щелкните правой кнопкой мыши для открытия окно поиск рейда."
+	CLICK_TOGGLE_SCENARIOS = "Щелкните средней кнопкой мыши или Shift-клик для открытия окно сценарий."
 elseif locale == "koKR" then
 --	LFG = ""
 --	CLICK_TOGGLE_DUNGEONS = ""
 --	CLICK_TOGGLE_RAIDS = ""
 --	CLICK_TOGGLE_SCENARIOS = ""
-elseif locale == "zhCN" then -- Last updated 2011-03-04 by tss1398383123 @ CurseForge
---	LFG = ""
-	CLICK_TOGGLE_DUNGEONS = "左键点击进入FB工具窗口。"
+elseif locale == "zhCN" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
+	LFG = "寻求组队"
+	CLICK_TOGGLE_DUNGEONS = "左键点击进入副本工具窗口。"
 	CLICK_TOGGLE_RAIDS = "右键点击进入团队浏览器窗口。"
---	CLICK_TOGGLE_SCENARIOS = ""
-elseif locale == "zhTW" then
---	LFG = ""
---	CLICK_TOGGLE_DUNGEONS = ""
---	CLICK_TOGGLE_RAIDS = ""
---	CLICK_TOGGLE_SCENARIOS = ""
+	CLICK_TOGGLE_SCENARIOS = "中单击或按住Shift键单击打开/关闭场景战役查找。" -- Needs review
+elseif locale == "zhTW" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
+	LFG = "尋求組隊"
+	CLICK_TOGGLE_DUNGEONS = "點擊顯示地城搜尋視窗。"
+	CLICK_TOGGLE_RAIDS = "右鍵點擊顯示瀏覽團隊窗口。"
+	CLICK_TOGGLE_SCENARIOS = "中鍵單擊或按住Shift鍵單擊打開/關閉場景框架。" -- Needs review
 end
 
 ------------------------------------------------------------------------
