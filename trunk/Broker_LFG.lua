@@ -146,8 +146,8 @@ BrokerLFG.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 			if button == "RightButton" or mode == "lfgparty" or mode == "abandonedInDungeon" then
 				PlaySound("igMainMenuOpen")
 				local screenHalf = GetScreenHalf()
-				MiniMapLFGFrameDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
-				MiniMapLFGFrameDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
+				QueueStatusMinimapButtonDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
+				QueueStatusMinimapButtonDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
 				ToggleDropDownMenu(1, nil, QueueStatusMinimapButtonDropDown, self:GetName() or self, 0, 0)
 			else
 				PVEFrame_ToggleFrame("GroupFinderFrame", queueFrames[queueType])
