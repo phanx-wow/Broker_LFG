@@ -18,9 +18,14 @@ if locale == "deDE" then
 	CLICK_TOGGLE_DUNGEONS = "Klicken, um Dungeonbrowser aktivieren."
 	CLICK_TOGGLE_RAIDS = "Rechtsklicken, um Schlachtzugsbrowser aktivieren."
 	CLICK_TOGGLE_SCENARIOS = "Mittleren klicken oder Shift-klicken, um Szenarienfenster aktivieren."
-elseif locale == "esES" or locale == "esMX" then
+elseif locale == "esES" then
 	LFG = "BDG"
 	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostraro ocultar el panel Buscador de calabozos."
+	CLICK_TOGGLE_RAIDS = "Haz clic derecho para mostraro ocultar el panel Buscador de bandas."
+	CLICK_TOGGLE_SCENARIOS = "Haz clic media o Mayús+clic para mostrar/ocultar el panel Gestas."
+elseif locale == "esMX" then
+	LFG = "BDG"
+	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostraro ocultar el panel Buscador de mazmorras."
 	CLICK_TOGGLE_RAIDS = "Haz clic derecho para mostraro ocultar el panel Buscador de bandas."
 	CLICK_TOGGLE_SCENARIOS = "Haz clic media o Mayús+clic para mostrar/ocultar el panel Gestas."
 elseif locale == "frFR" then
