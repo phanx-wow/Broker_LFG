@@ -106,7 +106,7 @@ local function GetQueueInfo()
 	for i = 1, NUM_LE_LFG_CATEGORYS do -- FFS Blizz, learn to spell.
 		local mode, submode = GetLFGMode(i)
 		if mode then
-			return queueTypes[i], mode, submode, queueTypeIndex
+			return queueTypes[i], mode, submode, i
 		end
 	end
 
