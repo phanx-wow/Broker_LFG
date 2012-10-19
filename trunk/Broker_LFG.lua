@@ -7,93 +7,93 @@
 	http://www.curse.com/addons/wow/broker-lfg
 ----------------------------------------------------------------------]]
 
-local L_QUEUE_STATUS = "LFG"
-local L_CLICK_LFD = "Click to open the Dungeon Finder."
-local L_CLICK_PVP = "Right-Click to open the PVP window."
-local L_CLICK_LFR = "Alt-click to open the Raid Finder."
-local L_CLICK_SCENARIOS = "Ctrl-Click to open the Scenarios window."
-local L_CLICK_PETJOURNAL = "Middle-Click or Shift-click to open the Pet Journal."
+local LFG = "LFG"
+local CLICK_TOGGLE_DUNGEONS = "Click to open the Dungeon Finder."
+local CLICK_TOGGLE_PVP = "Right-Click to open the PVP window."
+local CLICK_TOGGLE_RAIDS = "Alt-click to open the Raid Finder."
+local CLICK_TOGGLE_SCENARIOS = "Ctrl-Click to open the Scenarios window."
+local CLICK_TOGGLE_PETJOURNAL = "Middle-Click or Shift-click to open the Pet Journal."
 
 local LOCALE = GetLocale()
 if LOCALE == "deDE" then
-	L_QUEUE_STATUS = "SNG"
-	L_CLICK_LFD = "Klicken, um Dungeonbrowser aktivieren."
-	L_CLICK_PVP = "Rechtsklicken, um ### aktivieren."
-	L_CLICK_LFR = "###, um Schlachtzugsbrowser aktivieren."
-	L_CLICK_SCENARIOS = "###, um Szenarienfenster aktivieren."
-	L_CLICK_PETJOURNAL = "Mittleren klicken oder Shift-klicken, um ### aktivieren."
+	LFG = "SNG"
+	CLICK_TOGGLE_DUNGEONS = "Klicken, um Dungeonbrowser aktivieren."
+	CLICK_TOGGLE_PVP = "Rechtsklicken, um PvP-Fenster aktivieren."
+	CLICK_TOGGLE_RAIDS = "ALT-klicken, um Schlachtzugsbrowser aktivieren."
+	CLICK_TOGGLE_SCENARIOS = "STRG-klicken, um Szenarienfenster aktivieren."
+	CLICK_TOGGLE_PETJOURNAL = "Mittleren klicken oder SHIFT-klicken, um Wildtierführer aktivieren."
 
 elseif LOCALE == "esES" then
-	L_QUEUE_STATUS = "BDG"
-	L_CLICK_PVP = "Haz clic derecho para mostrar o ocultar el panel ###."
-	L_CLICK_LFD = "Haz clic para mostrar o ocultar el panel Buscador de calabozos."
-	L_CLICK_LFR = "### para mostrar o ocultar el panel Buscador de bandas."
-	L_CLICK_SCENARIOS = "### para mostrar o ocultar el panel Gestas."
-	L_CLICK_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar el panel ###."
+	LFG = "BDG"
+	CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
+	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar o ocultar el buscador de mazmorras."
+	CLICK_TOGGLE_RAIDS = "Alt+clic para mostrar o ocultar el buscador de bandas."
+	CLICK_TOGGLE_SCENARIOS = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
+	CLICK_TOGGLE_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
 
 elseif LOCALE == "esMX" then
-	L_QUEUE_STATUS = "BDG"
-	L_CLICK_LFD = "Haz clic para mostrar o ocultar el panel Buscador de mazmorras."
-	L_CLICK_PVP = "Haz clic derecho para mostrar o ocultar el panel ###."
-	L_CLICK_LFR = "### para mostrar o ocultar el panel Buscador de bandas."
-	L_CLICK_SCENARIOS = "### para mostrar o ocultar el panel Gestas."
-	L_CLICK_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar el panel ###."
+	LFG = "BDG"
+	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar o ocultar el buscador de calabozos."
+	CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
+	CLICK_TOGGLE_RAIDS = "Alt-clic para mostrar o ocultar el buscador de bandas."
+	CLICK_TOGGLE_SCENARIOS = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
+	CLICK_TOGGLE_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
 
 elseif LOCALE == "frFR" then
-	L_QUEUE_STATUS = "RdG"
-	L_CLICK_LFD = "Cliquer pour afficher ou fermer la fenêtre Donjons"
-	L_CLICK_PVP = "Clic droit pour afficherou fermer la la fenêtre ###."
-	L_CLICK_LFR = "### pour afficherou fermer la la fenêtre Raids."
-	L_CLICK_SCENARIOS = "### pour afficher/fermer la fenêtre Scénarios."
-	L_CLICK_PETJOURNAL = "Clic milieu ou clic-maj pour afficher/fermer la fenêtre ###."
+	LFG = "RdG"
+	CLICK_TOGGLE_DUNGEONS = "Cliquer pour afficher ou fermer la Cadre des donjons"
+	CLICK_TOGGLE_PVP = "Clic droit pour afficher ou fermer le Panneau JcJ."
+	CLICK_TOGGLE_RAIDS = "Clic-alt pour afficher ou fermer la Formation de raid."
+	CLICK_TOGGLE_SCENARIOS = "Clic-ctrl pour afficher/fermer le Panneau des Scénarios."
+	CLICK_TOGGLE_PETJOURNAL = "Clic milieu ou clic-maj pour afficher/fermer le Codex des mascottes."
 
 elseif LOCALE == "itIT" then
-	L_QUEUE_STATUS = "CG"
-	L_CLICK_LFD = "Clicca per mostrare o nascondere il pannello Ricerca delle istanze."
-	L_CLICK_PVP = "Clicca col tasto destro per mostrare o nascondere il pannello ###."
-	L_CLICK_LFR = "### per mostrare o nascondere il pannello Ricerca delle incursioni."
-	L_CLICK_SCENARIOS = "### per mostrare o nascondere il pannello Scenari."
-	L_CLICK_PETJOURNAL = "Clicca col tasto medio o Maiusc-clic per mostrare o nascondere il pannello ###."
+	LFG = "CG"
+	CLICK_TOGGLE_DUNGEONS = "Clicca per mostrare o nascondere il ricerca delle istanze."
+	CLICK_TOGGLE_PVP = "Clicca destro per mostrare o nascondere l'interfaccia del PvP."
+	CLICK_TOGGLE_RAIDS = "Alt-clicca per mostrare o nascondere il ricerca delle incursioni."
+	CLICK_TOGGLE_SCENARIOS = "Ctrl-clicca per mostrare o nascondere il pannello delle scenari."
+	CLICK_TOGGLE_PETJOURNAL = "Clicca medio o Maiusc-clicca per mostrare o nascondere il diario delle mascotte."
 
 elseif LOCALE == "ptBR" or LOCALE == "ptPT" then
-	L_QUEUE_STATUS = "PG"
-	L_CLICK_PVP = "Direito-clique para mostrar ou ocultar o painel ###."
-	L_CLICK_LFD = "Clique para mostrar ou ocultar o painel Localizador de masmorras."
-	L_CLICK_LFR = "### para mostrar ou ocultar o painel Localizador de raides."
-	L_CLICK_SCENARIOS = "### para mostrar ou ocultar o painel Cenários."
-	L_CLICK_PETJOURNAL = "Meio-clique ou shift-clique para mostrar ou ocultar o painel ###."
+	LFG = "PG"
+	CLICK_TOGGLE_PVP = "Direito-clique para mostrar ou ocultar o quadro de JxJ."
+	CLICK_TOGGLE_DUNGEONS = "Clique para mostrar ou ocultar o Localizador de masmorras."
+	CLICK_TOGGLE_RAIDS = "Alt-clique para mostrar ou ocultar o Localizador de raides."
+	CLICK_TOGGLE_SCENARIOS = "Ctrl-clique para mostrar ou ocultar o Localizador de cenários."
+	CLICK_TOGGLE_PETJOURNAL = "Meio-clique ou shift-clique para mostrar ou ocultar o Diário de Mascotes."
 
 elseif LOCALE == "ruRU" then
-	L_QUEUE_STATUS = "ПГ"
-	L_CLICK_LFD = "Щелкните для открытия окно поиска подземелий."
-	L_CLICK_PVP = "Щелкните правой кнопкой мыши для открытия окно ###."
-	L_CLICK_LFR = "### для открытия окно поиск рейда."
-	L_CLICK_SCENARIOS = "### для открытия окно сценарий."
-	L_CLICK_PETJOURNAL = "Щелкните средней кнопкой мыши или Shift-клик для открытия окно ###."
+	LFG = "ПГ"
+	CLICK_TOGGLE_DUNGEONS = "Щелкните для открытия Поиск подземелий."
+	CLICK_TOGGLE_PVP = "Щелкните правой кнопкой мыши для открытия Окно PvP."
+	CLICK_TOGGLE_RAIDS = "Alt-клик для открытия Поиск рейда."
+	CLICK_TOGGLE_SCENARIOS = "Ctrl-клик для открытия Сценарии."
+	CLICK_TOGGLE_PETJOURNAL = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
 
-elseif LOCALE == "koKR" then
---	L_QUEUE_STATUS = ""
---	L_CLICK_LFD = ""
---	L_CLICK_PVP = ""
---	L_CLICK_LFR = ""
---	L_CLICK_SCENARIOS = ""
---	L_CLICK_PETJOURNAL = ""
+elseif LOCALE == "koKR" then -- Last updated 2012-09-21 by nayuki87 on CurseForge
+	LFG = "던전 찾기"
+	CLICK_TOGGLE_DUNGEONS = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
+	CLICK_TOGGLE_PVP = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
+	CLICK_TOGGLE_RAIDS = "ALT클릭 하면 공격대 찾기 창을 켜거나 끕니다."
+	CLICK_TOGGLE_SCENARIOS = "CTRL클릭 하면 시나리오 창을 켜거나 끕니다."
+	CLICK_TOGGLE_PETJOURNAL = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
 
 elseif LOCALE == "enCN" or LOCALE == "zhCN" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
-	L_QUEUE_STATUS = "寻求组队"
-	L_CLICK_LFD = "左键点击进入副本工具窗口。"
---	L_CLICK_PVP = ""
---	L_CLICK_LFR = ""
---	L_CLICK_SCENARIOS = ""
---	L_CLICK_PETJOURNAL = ""
+	LFG = "寻求组队"
+	CLICK_TOGGLE_DUNGEONS = "左键点击进入副本工具窗口。"
+--	CLICK_TOGGLE_PVP = ""
+--	CLICK_TOGGLE_RAIDS = ""
+--	CLICK_TOGGLE_SCENARIOS = ""
+--	CLICK_TOGGLE_PETJOURNAL = ""
 
 elseif LOCALE == "enTW" or LOCALE == "zhTW" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
-	L_QUEUE_STATUS = "尋求組隊"
-	L_CLICK_LFD = "點擊顯示地城搜尋視窗。"
---	L_CLICK_PVP = ""
---	L_CLICK_LFR = ""
---	L_CLICK_SCENARIOS = ""
---	L_CLICK_PETJOURNAL = ""
+	LFG = "尋求組隊"
+	CLICK_TOGGLE_DUNGEONS = "點擊顯示地城搜尋視窗。"
+--	CLICK_TOGGLE_PVP = ""
+--	CLICK_TOGGLE_RAIDS = ""
+--	CLICK_TOGGLE_SCENARIOS = ""
+--	CLICK_TOGGLE_PETJOURNAL = ""
 
 end
 LOCALE = nil
@@ -182,10 +182,10 @@ local function GetScreenHalf()
 	end
 end
 
-addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("QueueStatus", {
+addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	type = "launcher",
 	icon = "Interface\\LFGFrame\\LFG-Eye",
-	label = "Queue Status",
+	label = "LFG",
 	iconCoords = LFG_EYE_TEXTURES.default.iconCoords[1],
 	OnEnter = function(self)
 		if GetQueueInfo() then
@@ -201,12 +201,12 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("QueueStatus", {
 			end
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
-			GameTooltip:SetText(L_QUEUE_STATUS)
-			GameTooltip:AddLine(L_CLICK_LFD) -- Click for LFD
-			GameTooltip:AddLine(L_CLICK_PVP) -- Right-click for PVP
-			GameTooltip:AddLine(L_CLICK_PETJOURNAL) -- Middle/Shift-click for Pet Journal
-			GameTooltip:AddLine(L_CLICK_LFR) -- Alt-click for LFR
-			GameTooltip:AddLine(L_CLICK_SCENARIOS) -- Ctrl-click for Scenarios
+			GameTooltip:SetText(LFG)
+			GameTooltip:AddLine(CLICK_TOGGLE_DUNGEONS) -- Click for LFD
+			GameTooltip:AddLine(CLICK_TOGGLE_PVP) -- Right-click for PVP
+			GameTooltip:AddLine(CLICK_TOGGLE_PETJOURNAL) -- Middle/Shift-click for Pet Journal
+			GameTooltip:AddLine(CLICK_TOGGLE_RAIDS) -- Alt-click for LFR
+			GameTooltip:AddLine(CLICK_TOGGLE_SCENARIOS) -- Ctrl-click for Scenarios
 			GameTooltip:Show()
 		end
 	end,
