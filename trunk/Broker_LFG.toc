@@ -1,5 +1,5 @@
-## Interface: 50100
-## Version: 5.1.0.wowi:revision
+## Interface: 50200
+## Version: 5.2.0.wowi:revision
 
 ## Title: Broker: LFG
 ## Notes: Basic LFG button for your DataBroker display.
@@ -9,6 +9,7 @@
 ## Notes-frFR: Bouton de base de RdG votre étalage DataBroker.
 ## Notes-itIT: Bottone di base di CG per vostra esposizione DataBroker.
 ## Notes-ptBR: Botão básico de PG para o seu exibição DataBroker.
+
 ## Author: Phanx
 ## X-Email: addons@phanx.net
 ## X-License: Public Domain
