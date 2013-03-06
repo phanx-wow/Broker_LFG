@@ -91,7 +91,7 @@ elseif LOCALE == "zhTW" then -- Updated 2012-07-15 by lsjyzjl
 	LFG = "尋求組隊"
 	CLICK_TOGGLE_DUNGEONS = "點擊顯示地城搜尋視窗。"
 	CLICK_TOGGLE_PVP = "右键单击打开/关闭PVP窗口。"
-	CLICK_TOGGLE_RAIDS = "按住Alt键单击打开/关闭瀏覽團隊窗口。.
+	CLICK_TOGGLE_RAIDS = "按住Alt键单击打开/关闭瀏覽團隊窗口。"
 	CLICK_TOGGLE_SCENARIOS = "按住Ctrl键单击打开/关闭场景战役查找。"
 --	CLICK_TOGGLE_PETJOURNAL = ""
 
