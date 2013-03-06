@@ -25,8 +25,8 @@ if LOCALE == "deDE" then
 
 elseif LOCALE == "esES" then
 	LFG = "BDG"
-	CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
 	CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar o ocultar el buscador de mazmorras."
+	CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
 	CLICK_TOGGLE_RAIDS = "Alt+clic para mostrar o ocultar el buscador de bandas."
 	CLICK_TOGGLE_SCENARIOS = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
 	CLICK_TOGGLE_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
@@ -71,7 +71,7 @@ elseif LOCALE == "ruRU" then
 	CLICK_TOGGLE_SCENARIOS = "Ctrl-клик для открытия Сценарии."
 	CLICK_TOGGLE_PETJOURNAL = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
 
-elseif LOCALE == "koKR" then -- Last updated 2012-09-21 by nayuki87 on CurseForge
+elseif LOCALE == "koKR" then -- Updated 2012-09-21 by nayuki87
 	LFG = "던전 찾기"
 	CLICK_TOGGLE_DUNGEONS = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
 	CLICK_TOGGLE_PVP = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
@@ -79,20 +79,20 @@ elseif LOCALE == "koKR" then -- Last updated 2012-09-21 by nayuki87 on CurseForg
 	CLICK_TOGGLE_SCENARIOS = "CTRL클릭 하면 시나리오 창을 켜거나 끕니다."
 	CLICK_TOGGLE_PETJOURNAL = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
 
-elseif LOCALE == "enCN" or LOCALE == "zhCN" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
+elseif LOCALE == "zhCN" then -- Updated 2012-12-06 by okaydud / Previously by tss1398383123, lsjyzjl
 	LFG = "寻求组队"
 	CLICK_TOGGLE_DUNGEONS = "左键点击进入副本工具窗口。"
---	CLICK_TOGGLE_PVP = ""
---	CLICK_TOGGLE_RAIDS = ""
---	CLICK_TOGGLE_SCENARIOS = ""
---	CLICK_TOGGLE_PETJOURNAL = ""
+	CLICK_TOGGLE_PVP = "右键点击打开PVP窗口。"
+	CLICK_TOGGLE_RAIDS  = "Alt+左键点击进入团队浏览器窗口。"
+	CLICK_TOGGLE_SCENARIOS = "按住Ctrl键单击打开/关闭场景战役查找。"
+	CLICK_TOGGLE_PETJOURNAL = "中键点击或Shift+左键点击打开宠物手册。"
 
-elseif LOCALE == "enTW" or LOCALE == "zhTW" then -- Last updated 2011-04-28 by lsjyzjl @ CurseForge
+elseif LOCALE == "zhTW" then -- Updated 2012-07-15 by lsjyzjl
 	LFG = "尋求組隊"
 	CLICK_TOGGLE_DUNGEONS = "點擊顯示地城搜尋視窗。"
---	CLICK_TOGGLE_PVP = ""
---	CLICK_TOGGLE_RAIDS = ""
---	CLICK_TOGGLE_SCENARIOS = ""
+	CLICK_TOGGLE_PVP = "右键单击打开/关闭PVP窗口。"
+	CLICK_TOGGLE_RAIDS = "按住Alt键单击打开/关闭瀏覽團隊窗口。.
+	CLICK_TOGGLE_SCENARIOS = "按住Ctrl键单击打开/关闭场景战役查找。"
 --	CLICK_TOGGLE_PETJOURNAL = ""
 
 end
