@@ -224,7 +224,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				QueueStatusMinimapButtonDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
 				ToggleDropDownMenu(1, nil, QueueStatusMinimapButtonDropDown, self:GetName() or self, 0, 0)
 			else
-				TogglePVPFrame()
+				TogglePVPUI()
 			end
 		elseif button == "MiddleButton" or IsShiftKeyDown() then
 			TogglePetJournal(2)
