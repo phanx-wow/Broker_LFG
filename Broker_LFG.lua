@@ -208,11 +208,11 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText(L.LFG)
-			GameTooltip:AddLine(L.ClickDungeons) -- Click for LFD
-			GameTooltip:AddLine(L.RightClickPVP) -- Right-click for PVP
-			GameTooltip:AddLine(L.ShiftClickPets) -- Middle/Shift-click for Pet Journal
-			GameTooltip:AddLine(L.AltClickRaids) -- Alt-click for LFR
-			GameTooltip:AddLine(L.CtrlClickScenarios) -- Ctrl-click for Scenarios
+			GameTooltip:AddLine(L.ClickDungeons, 1, 1, 1) -- Click for LFD
+			GameTooltip:AddLine(L.RightClickPVP, 1, 1, 1) -- Right-click for PVP
+			GameTooltip:AddLine(L.ShiftClickPets, 1, 1, 1) -- Middle/Shift-click for Pet Journal
+			GameTooltip:AddLine(L.AltClickRaids, 1, 1, 1) -- Alt-click for LFR
+			GameTooltip:AddLine(L.CtrlClickScenarios, 1, 1, 1) -- Ctrl-click for Scenarios
 			GameTooltip:Show()
 		end
 	end,
