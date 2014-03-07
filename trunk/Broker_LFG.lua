@@ -1,4 +1,4 @@
---[[------------------------------------------------------
+--[[--------------------------------------------------------------------
 	Broker_LFG
 	Basic LFG button for your DataBroker display.
 	Written by Phanx <addons@phanx.net>
@@ -21,9 +21,9 @@ if LOCALE == "deDE" then
 	L.LFG = "SNG"
 	L.ClickDungeons = "Klicken, um Dungeonbrowser aktivieren."
 	L.RightClickPVP = "Rechtsklicken, um PvP-Fenster aktivieren."
-	L.AltClickRaids = "ALT-klicken, um Schlachtzugsbrowser aktivieren."
-	L.CtrlClickScenarios = "STRG-klicken, um Szenarienfenster aktivieren."
-	L.ShiftClickPets = "Mittleren klicken oder SHIFT-klicken, um Wildtierführer aktivieren."
+	L.AltClickRaids = "ALT-Klicken, um Schlachtzugsbrowser aktivieren."
+	L.CtrlClickScenarios = "STRG-Klicken, um Szenarienfenster aktivieren."
+	L.ShiftClickPets = "Mittelklicken oder SHIFT-Klicken, um Wildtierführer aktivieren."
 
 elseif LOCALE == "esES" then
 	L.LFG = "BDG"

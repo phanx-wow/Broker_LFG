@@ -1,5 +1,5 @@
 ## Interface: 50400
-## Version: 5.4.1.wowi:revision
+## Version: 5.4.2.wowi:revision
 
 ## Title: Broker: LFG
 ## Title-deDE: Broker: SNG
@@ -10,7 +10,7 @@
 ## Title-ptBR: Broker: PG
 
 ## Notes: Basic LFG button for your DataBroker display.
-## Notes-deDE: Einfach SNG-Schaltfläche für Ihre DataBroker-Auslage.
+## Notes-deDE: Einfach SNG-Schaltfläche für deine DataBroker-Anzeige.
 ## Notes-esES: Botón básico de BDG para tu exhibición DataBroker.
 ## Notes-esMX: Botón básico de BDG para su exhibición DataBroker.
 ## Notes-frFR: Bouton de base de RdG votre étalage DataBroker.
