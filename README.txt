@@ -1,15 +1,7 @@
 Broker_LFG
 ==========
 
-* Written by Phanx <addons@phanx.net>
-* http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
-* http://www.curse.com/addons/wow/broker-lfg
-
-
-Description
------------
-
-Broker_LFG is a basic LFG launcher button for your DataBroker display.
+Basic LFG launcher button for your DataBroker display.
 
 While you are in a Dungeon Finder, Raid Finder, Scenario Finder, or
 Battleground queue or group, you can click the icon to open the queue
@@ -24,14 +16,21 @@ and middle-click or shift-click to open the Scenarios window.
 There are no options. It "just works".
 
 
+Download
+--------
+
+* http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
+* http://www.curse.com/addons/wow/broker-lfg
+
+
 Localization
 ------------
 
-Compatible with English, Deutsch, Español (EU), Español (AL), Français,
-Italiano, Português, Русский, 한국어, 简体中文, and 繁體中文 game clients.
+Compatible with English, Deutsch, Español, Français, Italiano,
+Português, Русский, 한국어, 简体中文 and 繁體中文 game clients.
 
-Translated into English, Deutsch, Español, Français, Italiano, Português,
-Русский, 简体中文, and 繁體中文.
+Translated into English, Deutsch, Español, Français, Italiano,
+Português, Русский, 简体中文 and 繁體中文.
 
 To add or update translations for any language, see the Localization tab
 on the CurseForge project page:
@@ -40,17 +39,21 @@ http://wow.curseforge.com/addons/broker-lfg/localization/
 
 
 Feedback
---------
+-----------
 
-Bugs, errors, or other problems:
-	Please use the ticket system on either download page.
+**Post a comment on WoWInterface.** If you are reporting a bug, please
+include detailed instructions I can follow to reproduce the bug myself,
+whether or not it still happens when all other addons are disabled, and
+the exact text of the first related error message (if any) from BugSack.
 
-Feature requests or other suggestions:
-	Please use the ticket system on either download page.
+If you need to contact me privately, you can send a private message to
+Phanx on either download site, or email me at <addons@phanx.net>.
+**Please note** that I do not provide private addon support or tutoring
+of any kind; post a comment or forum thread instead!
 
-General questions or comments:
-	Post a comment on either download page.
 
-If you need to contact me privately for a reason other than those listed
-above, you can send me a private message on either download site, or
-email me at <addons@phanx.net>.
+License
+----------
+
+Copyright (c) 2010-2014 Phanx. All rights reserved. See the accompanying
+LICENSE file for additional information.
