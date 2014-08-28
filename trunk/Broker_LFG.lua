@@ -73,8 +73,7 @@ elseif LOCALE == "ruRU" then
 	L.CtrlClickScenarios = "Ctrl-клик для открытия Сценарии."
 	L.ShiftClickPets = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
 
-elseif LOCALE == "koKR" then
-	-- Last updated 2012-09-21 by nayuki87
+elseif LOCALE == "koKR" then -- Last updated 2012-09-21 by nayuki87
 	L.LFG = "던전 찾기"
 	L.ClickDungeons = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
 	L.RightClickPVP = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
@@ -82,9 +81,7 @@ elseif LOCALE == "koKR" then
 	L.CtrlClickScenarios = "CTRL클릭 하면 시나리오 창을 켜거나 끕니다."
 	L.ShiftClickPets = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
 
-elseif LOCALE == "zhCN" then
-	-- Last updated 2012-12-06 by okaydud
-	-- Previous contributors: tss1398383123, lsjyzjl
+elseif LOCALE == "zhCN" then -- Last updated 2012-12-06 by okaydud / Previous contributors: tss1398383123, lsjyzjl
 	L.LFG = "寻求组队"
 	L.ClickDungeons = "左键点击进入副本工具窗口。"
 	L.RightClickPVP = "右键点击打开PVP窗口。"
@@ -92,14 +89,13 @@ elseif LOCALE == "zhCN" then
 	L.CtrlClickScenarios = "按住Ctrl键单击打开/关闭场景战役查找。"
 	L.ShiftClickPets = "中键点击或Shift+左键点击打开宠物手册。"
 
-elseif LOCALE == "zhTW" then
-	-- Last updated 2012-07-15 by lsjyzjl
+elseif LOCALE == "zhTW" then -- Last updated 2013-07-09 by zhTW / Previous contributors: lsjyzjl
 	L.LFG = "尋求組隊"
 	L.ClickDungeons = "點擊顯示地城搜尋視窗。"
 	L.RightClickPVP = "右键单击打开/关闭PVP窗口。"
 	L.AltClickRaids = "按住Alt键单击打开/关闭瀏覽團隊窗口。"
 	L.CtrlClickScenarios = "按住Ctrl键单击打开/关闭场景战役查找。"
---	L.ShiftClickPets = ""
+	L.ShiftClickPets = "中鍵點擊或Shift+左鍵點擊打開寵物手冊。"
 
 end
 LOCALE = nil
