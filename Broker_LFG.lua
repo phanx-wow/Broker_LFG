@@ -2,9 +2,9 @@
 	Broker_LFG
 	Basic LFG button for your DataBroker display.
 	Copyright (c) 2010-2014 Phanx <addons@phanx.net>. All rights reserved.
-	See the accompanying README and LICENSE files for more information.
 	http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
 	http://www.curse.com/addons/wow/broker-lfg
+	https://github.com/Phanx/Broker_LFG
 ----------------------------------------------------------------------]]
 
 local L = {

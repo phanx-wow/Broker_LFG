@@ -1,33 +1,25 @@
 ## Interface: 60000
-## Version: 6.0.2.wowi:revision
+## Version: 6.0.2.64
 
 ## Title: Broker: LFG
-## Title-deDE: Broker: SNG
-## Title-esES: Broker: BDG
-## Title-esMX: Broker: BDG
-## Title-frFR: Broker: RdG
-## Title-itIT: Broker: CG
-## Title-ptBR: Broker: PG
-
 ## Notes: Basic LFG button for your DataBroker display.
+## Title-deDE: Broker: SNG
 ## Notes-deDE: Einfach SNG-Schaltfläche für deine DataBroker-Anzeige.
+## Title-esES: Broker: BDG
 ## Notes-esES: Botón básico de BDG para tu exhibición DataBroker.
+## Title-esMX: Broker: BDG
 ## Notes-esMX: Botón básico de BDG para su exhibición DataBroker.
+## Title-frFR: Broker: RdG
 ## Notes-frFR: Bouton de base de RdG votre étalage DataBroker.
+## Title-itIT: Broker: CG
 ## Notes-itIT: Bottone di base di CG per vostra esposizione DataBroker.
+## Title-ptBR: Broker: PG
 ## Notes-ptBR: Botão básico de PG para o seu exibição DataBroker.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
 ## X-Copyright: Copyright (c) 2010-2014 Phanx. All rights reserved.
-## X-License: See the accomanying LICENSE file for details.
-## X-CompatibleLocales: deDE, enUS, esES, esMX, frFR, itIT, ptBR, koKR, ruRU, zhCN, zhTW
-## X-Localizations: deDE, enUS, esES, esMX, frFR, itIT, ptBR, ruRU, koKR, zhCN, zhTW
-## X-Website: http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
-## X-Curse-Project-Name: broker-lfg
-## X-WoWI-ID: 16710
-
-## OptionalDependencies: LibDataBroker-1.1
+## X-Website: https://github.com/Phanx/Broker_LFG
 
 Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
