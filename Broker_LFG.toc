@@ -1,19 +1,13 @@
-## Interface: 60000
+## Interface: 60100
 ## Version: @project-version@
 
 ## Title: Broker: LFG
 ## Notes: Basic LFG button for your DataBroker display.
-## Title-deDE: Broker: SNG
 ## Notes-deDE: Einfach SNG-Schaltfläche für deine DataBroker-Anzeige.
-## Title-esES: Broker: BDG
 ## Notes-esES: Botón básico de BDG para tu exhibición DataBroker.
-## Title-esMX: Broker: BDG
 ## Notes-esMX: Botón básico de BDG para su exhibición DataBroker.
-## Title-frFR: Broker: RdG
 ## Notes-frFR: Bouton de base de RdG votre étalage DataBroker.
-## Title-itIT: Broker: CG
 ## Notes-itIT: Bottone di base di CG per vostra esposizione DataBroker.
-## Title-ptBR: Broker: PG
 ## Notes-ptBR: Botão básico de PG para o seu exibição DataBroker.
 
 ## Author: Phanx

@@ -1,3 +1,7 @@
+### Version 6.1.0.3
+
+* Updated for WoW 6.1
+
 ### Version 6.0.3.10
 
 * Updated for raid difficulty changes in WoD
