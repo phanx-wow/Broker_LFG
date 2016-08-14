@@ -1,4 +1,4 @@
-## Interface: 60100
+## Interface: 70000
 ## Version: @project-version@
 
 ## Title: Broker: LFG
@@ -12,8 +12,10 @@
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2010-2015 Phanx. All rights reserved.
+## X-Copyright: Copyright (c) 2010-2016 Phanx. All rights reserved.
 ## X-Website: https://github.com/Phanx/Broker_LFG
+## X-Curse-Project-ID: broker-lfg
+## X-WoWI-ID: 16710
 
 Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
