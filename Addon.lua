@@ -1,9 +1,9 @@
 --[[--------------------------------------------------------------------
 	Broker_LFG
 	Basic LFG button for your DataBroker display.
-	Copyright (c) 2010-2015 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright (c) 2010-2016 Phanx <addons@phanx.net>. All rights reserved.
 	http://www.wowinterface.com/downloads/info16710-BrokerLFG.html
-	http://www.curse.com/addons/wow/broker-lfg
+	https://mods.curse.com/addons/wow/broker-lfg
 	https://github.com/Phanx/Broker_LFG
 ----------------------------------------------------------------------]]
 
@@ -231,7 +231,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				TogglePVPUI()
 			end
 		elseif button == "MiddleButton" or IsShiftKeyDown() then
-			TogglePetJournal(2)
+			ToggleCollectionsJournal(2)
 		elseif IsControlKeyDown() then
 			PVEFrame_ToggleFrame("GroupFinderFrame", ScenarioFinderFrame)
 		elseif IsAltKeyDown() then
