@@ -7,6 +7,9 @@ manual-changelog:
 ignore:
    - CHANGELOG.md
    - README.md
+   - LibStub.toc
+   - CallbackHandler-1.0.xml
+   - README.textile
 
 enable-nolib-creation: no
 
