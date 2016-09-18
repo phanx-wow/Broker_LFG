@@ -9,99 +9,6 @@
 
 local ADDON, L = ...
 
-local L = {
-	AltClickRaids = "Alt-click to open the Raid Finder.",
-	ClickDungeons = "Click to open the Dungeon Finder.",
-	CtrlClickScenarios = "Ctrl-Click to open the Scenarios window.",
-	LFG = "LFG",
-	RightClickPVP = "Right-Click to open the PVP window.",
-	ShiftClickPets = "Middle-Click or Shift-click to open the Pet Journal.",
-}
-
-local LOCALE = GetLocale()
-if LOCALE == "deDE" then
-	L.LFG = "SNG"
-	L.ClickDungeons = "Klicken, um Dungeonbrowser aktivieren."
-	L.RightClickPVP = "Rechtsklicken, um PvP-Fenster aktivieren."
-	L.AltClickRaids = "ALT-Klicken, um Schlachtzugsbrowser aktivieren."
-	L.CtrlClickScenarios = "STRG-Klicken, um Szenarienfenster aktivieren."
-	L.ShiftClickPets = "Mittelklicken oder SHIFT-Klicken, um Wildtierführer aktivieren."
-
-elseif LOCALE == "esES" then
-	L.LFG = "BDG"
-	L.ClickDungeons = "Haz clic para mostrar o ocultar el buscador de mazmorras."
-	L.RightClickPVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
-	L.AltClickRaids = "Alt+clic para mostrar o ocultar el buscador de bandas."
-	L.CtrlClickScenarios = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
-	L.ShiftClickPets = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
-
-elseif LOCALE == "esMX" then
-	L.LFG = "BDG"
-	L.ClickDungeons = "Haz clic para mostrar o ocultar el buscador de calabozos."
-	L.RightClickPVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
-	L.AltClickRaids = "Alt-clic para mostrar o ocultar el buscador de bandas."
-	L.CtrlClickScenarios = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
-	L.ShiftClickPets = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
-
-elseif LOCALE == "frFR" then
-	L.LFG = "RdG"
-	L.ClickDungeons = "Cliquer pour afficher ou fermer la Cadre des donjons"
-	L.RightClickPVP = "Clic droit pour afficher ou fermer le Panneau JcJ."
-	L.AltClickRaids = "Clic-alt pour afficher ou fermer la Formation de raid."
-	L.CtrlClickScenarios = "Clic-ctrl pour afficher/fermer le Panneau des Scénarios."
-	L.ShiftClickPets = "Clic milieu ou clic-maj pour afficher/fermer le Codex des mascottes."
-
-elseif LOCALE == "itIT" then
-	L.LFG = "CG"
-	L.ClickDungeons = "Clicca per mostrare o nascondere il ricerca delle istanze."
-	L.RightClickPVP = "Clicca destro per mostrare o nascondere l'interfaccia del PvP."
-	L.AltClickRaids = "Alt-clicca per mostrare o nascondere il ricerca delle incursioni."
-	L.CtrlClickScenarios = "Ctrl-clicca per mostrare o nascondere il pannello delle scenari."
-	L.ShiftClickPets = "Clicca medio o Maiusc-clicca per mostrare o nascondere il diario delle mascotte."
-
-elseif LOCALE == "ptBR" or LOCALE == "ptPT" then
-	L.LFG = "PG"
-	L.RightClickPVP = "Direito-clique para mostrar ou ocultar o quadro de JxJ."
-	L.ClickDungeons = "Clique para mostrar ou ocultar o Localizador de masmorras."
-	L.AltClickRaids = "Alt-clique para mostrar ou ocultar o Localizador de raides."
-	L.CtrlClickScenarios = "Ctrl-clique para mostrar ou ocultar o Localizador de cenários."
-	L.ShiftClickPets = "Meio-clique ou shift-clique para mostrar ou ocultar o Diário de Mascotes."
-
-elseif LOCALE == "ruRU" then
-	L.LFG = "ПГ"
-	L.ClickDungeons = "Щелкните для открытия Поиск подземелий."
-	L.RightClickPVP = "Щелкните правой кнопкой мыши для открытия Окно PvP."
-	L.AltClickRaids = "Alt-клик для открытия Поиск рейда."
-	L.CtrlClickScenarios = "Ctrl-клик для открытия Сценарии."
-	L.ShiftClickPets = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
-
-elseif LOCALE == "koKR" then -- Last updated 2012-09-21 by nayuki87
-	L.LFG = "던전 찾기"
-	L.ClickDungeons = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
-	L.RightClickPVP = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
-	L.AltClickRaids = "ALT클릭 하면 공격대 찾기 창을 켜거나 끕니다."
-	L.CtrlClickScenarios = "CTRL클릭 하면 시나리오 창을 켜거나 끕니다."
-	L.ShiftClickPets = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
-
-elseif LOCALE == "zhCN" then -- Last updated 2012-12-06 by okaydud / Previous contributors: tss1398383123, lsjyzjl
-	L.LFG = "寻求组队"
-	L.ClickDungeons = "左键点击进入副本工具窗口。"
-	L.RightClickPVP = "右键点击打开PVP窗口。"
-	L.AltClickRaids  = "Alt+左键点击进入团队浏览器窗口。"
-	L.CtrlClickScenarios = "按住Ctrl键单击打开/关闭场景战役查找。"
-	L.ShiftClickPets = "中键点击或Shift+左键点击打开宠物手册。"
-
-elseif LOCALE == "zhTW" then -- Last updated 2013-07-09 by zhTW / Previous contributors: lsjyzjl
-	L.LFG = "尋求組隊"
-	L.ClickDungeons = "點擊顯示地城搜尋視窗。"
-	L.RightClickPVP = "右键单击打开/关闭PVP窗口。"
-	L.AltClickRaids = "按住Alt键单击打开/关闭瀏覽團隊窗口。"
-	L.CtrlClickScenarios = "按住Ctrl键单击打开/关闭场景战役查找。"
-	L.ShiftClickPets = "中鍵點擊或Shift+左鍵點擊打開寵物手冊。"
-
-end
-LOCALE = nil
-
 ------------------------------------------------------------------------
 
 for queueType, t in pairs(LFG_EYE_TEXTURES) do
@@ -205,12 +112,12 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 			end
 		else
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
-			GameTooltip:SetText(L.LFG)
-			GameTooltip:AddLine(L.ClickDungeons, 1, 1, 1) -- Click for LFD
-			GameTooltip:AddLine(L.RightClickPVP, 1, 1, 1) -- Right-click for PVP
+			GameTooltip:SetText(L["LFG"])
+			GameTooltip:AddLine(L["Click to open the Dungeon Finder."], 1, 1, 1)
+			GameTooltip:AddLine(L["Right-Click to open the PVP window."], 1, 1, 1)
+			GameTooltip:AddLine(L.AltClickRaids, 1, 1, 1) -- Alt-click for Raid Finder
+			GameTooltip:AddLine(L.CtrlClickPremades, 1, 1, 1) -- Ctrl-click for Premade Groups
 			GameTooltip:AddLine(L.ShiftClickPets, 1, 1, 1) -- Middle/Shift-click for Pet Journal
-			GameTooltip:AddLine(L.AltClickRaids, 1, 1, 1) -- Alt-click for LFR
-			GameTooltip:AddLine(L.CtrlClickScenarios, 1, 1, 1) -- Ctrl-click for Scenarios
 			GameTooltip:Show()
 		end
 	end,
@@ -233,7 +140,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 		elseif button == "MiddleButton" or IsShiftKeyDown() then
 			ToggleCollectionsJournal(2)
 		elseif IsControlKeyDown() then
-			PVEFrame_ToggleFrame("GroupFinderFrame", ScenarioFinderFrame)
+			PVEFrame_ToggleFrame("GroupFinderFrame", LFGListPVEStub)
 		elseif IsAltKeyDown() then
 			PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame)
 		else
