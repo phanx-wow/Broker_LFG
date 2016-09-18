@@ -3,12 +3,12 @@
 
 ## Title: Broker: LFG
 ## Notes: Basic LFG button for your DataBroker display.
-## Notes-deDE: Einfach SNG-Schaltfläche für deine DataBroker-Anzeige.
+## Notes-deDE: Einfache SNG-Schaltfläche für deine DataBroker-Anzeige.
 ## Notes-esES: Botón básico de BDG para tu exhibición DataBroker.
-## Notes-esMX: Botón básico de BDG para su exhibición DataBroker.
+## Notes-esMX: Botón básico de BDG para tu exhibición DataBroker.
 ## Notes-frFR: Bouton de base de RdG votre étalage DataBroker.
 ## Notes-itIT: Bottone di base di CG per vostra esposizione DataBroker.
-## Notes-ptBR: Botão básico de PG para o seu exibição DataBroker.
+## Notes-ptBR: Botão básico de PG para seu exibição DataBroker.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net

@@ -22,12 +22,6 @@ end })
 -- English
 ------------------------------------------------------------------------
 
-L.CLICK_TOGGLE_DUNGEONS = "Click to open the Dungeon Finder."
-L.CLICK_TOGGLE_PETJOURNAL = "Middle-Click or Shift-click to open the Pet Journal."
-L.CLICK_TOGGLE_PVP = "Right-Click to open the PVP window."
-L.CLICK_TOGGLE_RAIDS = "Alt-click to open the Raid Finder."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl-Click to open the Scenarios window."
-
 local CURRENT_LOCALE = GetLocale()
 if CURRENT_LOCALE == "enUS" then return end
 
@@ -37,12 +31,13 @@ if CURRENT_LOCALE == "enUS" then return end
 
 if CURRENT_LOCALE == "deDE" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Klicken, um Dungeonbrowser aktivieren."
-L.CLICK_TOGGLE_PETJOURNAL = "Mittleren klicken oder SHIFT-klicken, um Wildtierführer aktivieren."
-L.CLICK_TOGGLE_PVP = "Rechtsklicken, um PvP-Fenster aktivieren."
-L.CLICK_TOGGLE_RAIDS = "ALT-klicken, um Schlachtzugsbrowser aktivieren."
-L.CLICK_TOGGLE_SCENARIOS = "STRG-klicken, um Szenarienfenster aktivieren."
-L.LFG = "SNG"
+L["Alt-Click to open the Raid Finder."] = "ALT-klicken, um Schlachtzugsbrowser zu öffnen."
+L["Basic LFG button for your DataBroker display."] = "Einfache SNG-Schaltfläche für deine DataBroker-Anzeige."
+L["Click to open the Dungeon Finder."] = "Klicken, um Dungeonbrowser zu öffnen."
+L["Ctrl-Click to open the Premade Groups window."] = "STRG-klicken, um Organisierte-Gruppenfenster zu öffnen."
+L["LFG"] = "SNG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Mittleren klicken oder SHIFT-klicken, um Wildtierführer zu öffnen."
+L["Right-Click to open the PVP window."] = "Rechtsklicken, um PvP-Fenster zu öffnen."
 
 return end
 
@@ -52,12 +47,13 @@ return end
 
 if CURRENT_LOCALE == "esES" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar o ocultar el buscador de mazmorras."
-L.CLICK_TOGGLE_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
-L.CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
-L.CLICK_TOGGLE_RAIDS = "Alt+clic para mostrar o ocultar el buscador de bandas."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
-L.LFG = "BDG"
+L["Alt-Click to open the Raid Finder."] = "Alt+clic para mostrar el buscador de bandas."
+L["Basic LFG button for your DataBroker display."] = "Botón básico de BDG para tu exhibición DataBroker."
+L["Click to open the Dungeon Finder."] = "Haz clic para mostrar el buscador de mazmorras."
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl+clic para mostrar el cuadro de grupos ya creados."
+L["LFG"] = "BDG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Haz clic media o Mayús+clic para mostrar la guía de mascotas."
+L["Right-Click to open the PVP window."] = "Haz clic derecho para mostrar el cuadro de JcJ."
 
 return end
 
@@ -67,12 +63,13 @@ return end
 
 if CURRENT_LOCALE == "esMX" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Haz clic para mostrar o ocultar el buscador de calabozos."
-L.CLICK_TOGGLE_PETJOURNAL = "Haz clic media o Mayús+clic para mostrar o ocultar la guía de mascotas."
-L.CLICK_TOGGLE_PVP = "Haz clic derecho para mostrar o ocultar el cuadro de JcJ."
-L.CLICK_TOGGLE_RAIDS = "Alt-clic para mostrar o ocultar el buscador de bandas."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl+clic para mostrar o ocultar el cuadro de gestas."
-L.LFG = "BDG"
+L["Alt-Click to open the Raid Finder."] = "Alt-clic para mostrar el buscador de bandas."
+L["Basic LFG button for your DataBroker display."] = "Botón básico de BDG para tu exhibición DataBroker."
+L["Click to open the Dungeon Finder."] = "Haz clic para mostrar el buscador de calabozos."
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl+clic para mostrar el cuadro de grupos ya creados."
+L["LFG"] = "BDG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Haz clic media o Mayús+clic para mostrar la guía de mascotas."
+L["Right-Click to open the PVP window."] = "Haz clic derecho para mostrar el cuadro de JcJ."
 
 return end
 
@@ -82,12 +79,13 @@ return end
 
 if CURRENT_LOCALE == "frFR" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Cliquer pour afficher ou fermer la Cadre des donjons"
-L.CLICK_TOGGLE_PETJOURNAL = "Clic milieu ou clic-maj pour afficher/fermer le Codex des mascottes."
-L.CLICK_TOGGLE_PVP = "Clic droit pour afficher ou fermer le Panneau JcJ."
-L.CLICK_TOGGLE_RAIDS = "Clic-alt pour afficher ou fermer la Formation de raid."
-L.CLICK_TOGGLE_SCENARIOS = "Clic-ctrl pour afficher/fermer le Panneau des Scénarios."
-L.LFG = "RdG"
+L["Alt-Click to open the Raid Finder."] = "Clic-alt pour afficher la recherche de raid."
+L["Basic LFG button for your DataBroker display."] = "Bouton de base de RdG votre étalage DataBroker."
+L["Click to open the Dungeon Finder."] = "Cliquer pour afficher la cadre des donjons."
+L["Ctrl-Click to open the Premade Groups window."] = "Clic-ctrl pour afficher les groupes prédéfinis."
+L["LFG"] = "RdG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Clic milieu ou clic-maj pour afficher le codex des mascottes."
+L["Right-Click to open the PVP window."] = "Clic droit pour afficher ou fermer le panneau de JcJ."
 
 return end
 
@@ -97,12 +95,13 @@ return end
 
 if CURRENT_LOCALE == "itIT" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Clicca per mostrare o nascondere il ricerca delle istanze."
-L.CLICK_TOGGLE_PETJOURNAL = "Clicca medio o Maiusc-clicca per mostrare o nascondere il diario delle mascotte."
-L.CLICK_TOGGLE_PVP = "Clicca destro per mostrare o nascondere l'interfaccia del PvP."
-L.CLICK_TOGGLE_RAIDS = "Alt-clicca per mostrare o nascondere il ricerca delle incursioni."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl-clicca per mostrare o nascondere il pannello delle scenari."
-L.LFG = "CG"
+L["Alt-Click to open the Raid Finder."] = "Alt-clicca per mostrare il ricerca delle incursioni."
+L["Basic LFG button for your DataBroker display."] = "Bottone di base di CG per vostra esposizione DataBroker."
+L["Click to open the Dungeon Finder."] = "Clicca per mostrare il ricerca delle istanze."
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl-clicca per mostrare il pannello delle gruppi organizzati."
+L["LFG"] = "CG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Clicca medio o Maiusc-clicca per mostrare il diario delle mascotte."
+L["Right-Click to open the PVP window."] = "Clicca destro per mostrare l'interfaccia del PvP."
 
 return end
 
@@ -112,12 +111,13 @@ return end
 
 if CURRENT_LOCALE == "ptBR" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Clique para mostrar ou ocultar o Localizador de masmorras."
-L.CLICK_TOGGLE_PETJOURNAL = "Meio-clique ou shift-clique para mostrar ou ocultar o Diário de Mascotes."
-L.CLICK_TOGGLE_PVP = "Direito-clique para mostrar ou ocultar o quadro de JxJ."
-L.CLICK_TOGGLE_RAIDS = "Alt-clique para mostrar ou ocultar o Localizador de raides."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl-clique para mostrar ou ocultar o Localizador de cenários."
-L.LFG = "PG"
+L["Alt-Click to open the Raid Finder."] = "Alt-clique para mostrar o localizador de raides."
+L["Basic LFG button for your DataBroker display."] = "Botão básico de PG para seu exibição DataBroker."
+L["Click to open the Dungeon Finder."] = "Clique para mostrar o localizador de masmorras."
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl-clique para mostrar o localizador de cenários."
+L["LFG"] = "PG"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Meio-clique ou shift-clique para mostrar o diário de mascotes."
+L["Right-Click to open the PVP window."] = "Direito-clique para mostrar o quadro de JxJ."
 
 return end
 
@@ -127,12 +127,12 @@ return end
 
 if CURRENT_LOCALE == "ruRU" then
 
-L.CLICK_TOGGLE_DUNGEONS = "Щелкните для открытия Поиск подземелий."
-L.CLICK_TOGGLE_PETJOURNAL = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
-L.CLICK_TOGGLE_PVP = "Щелкните правой кнопкой мыши для открытия Окно PvP."
-L.CLICK_TOGGLE_RAIDS = "Alt-клик для открытия Поиск рейда."
-L.CLICK_TOGGLE_SCENARIOS = "Ctrl-клик для открытия Сценарии."
-L.LFG = "ЛФГ"
+L["Alt-Click to open the Raid Finder."] = "Alt-клик для открытия Поиск рейда."
+L["Click to open the Dungeon Finder."] = "Щелкните для открытия Поиск подземелий."
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl-клик для открытия Заранее собранные группы."
+L["LFG"] = "ЛФГ"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "Щелкните средней кнопкой мыши или Shift-клик для открытия Транспорт и питомцы."
+L["Right-Click to open the PVP window."] = "Щелкните правой кнопкой мыши для открытия Окно PvP."
 
 return end
 
@@ -142,12 +142,12 @@ return end
 
 if CURRENT_LOCALE == "koKR" then
 
-L.CLICK_TOGGLE_DUNGEONS = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
-L.CLICK_TOGGLE_PETJOURNAL = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
-L.CLICK_TOGGLE_PVP = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
-L.CLICK_TOGGLE_RAIDS = "ALT클릭 하면 공격대 찾기 창을 켜거나 끕니다."
-L.CLICK_TOGGLE_SCENARIOS = "CTRL클릭 하면 시나리오 창을 켜거나 끕니다."
-L.LFG = "던전 찾기"
+L["Alt-Click to open the Raid Finder."] = "ALT클릭 하면 공격대 찾기 창을 켜거나 끕니다."
+L["Click to open the Dungeon Finder."] = "클릭 하면 던전 찾기 창을 켜거나 끕니다."
+L["Ctrl-Click to open the Premade Groups window."] = "CTRL클릭 하면 파티 구성하기 창을 켜거나 끕니다."
+L["LFG"] = "던전 찾기"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "가운데클릭 또는 쉬프트클릭 하면 애완동물 도감 창을 켜거나 끕니다."
+L["Right-Click to open the PVP window."] = "오른쪽클릭 하면 명예창 창을 켜거나 끕니다."
 
 return end
 
@@ -157,12 +157,12 @@ return end
 
 if CURRENT_LOCALE == "zhCN" then
 
-L.CLICK_TOGGLE_DUNGEONS = "左键点击进入副本工具窗口。"
-L.CLICK_TOGGLE_PETJOURNAL = "中键点击或shift+左键点击打开宠物手册。"
-L.CLICK_TOGGLE_PVP = "右键点击打开PVP窗口。"
-L.CLICK_TOGGLE_RAIDS = "Alt+左键点击进入团队浏览器窗口。"
-L.CLICK_TOGGLE_SCENARIOS = "按住Ctrl键单击打开/关闭场景战役查找。"
-L.LFG = "寻求组队"
+L["Alt-Click to open the Raid Finder."] = "Alt+左键点击进入团队浏览器窗口。"
+L["Click to open the Dungeon Finder."] = "左键点击进入副本工具窗口。"
+L["Ctrl-Click to open the Premade Groups window."] = "按住Ctrl键单击打开/关闭预创建队伍窗口"
+L["LFG"] = "寻求组队"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "中键点击或shift+左键点击打开宠物手册。"
+L["Right-Click to open the PVP window."] = "右键点击打开PVP窗口。"
 
 return end
 
@@ -172,11 +172,11 @@ return end
 
 if CURRENT_LOCALE == "zhTW" then
 
-L.CLICK_TOGGLE_DUNGEONS = "點擊顯示地城搜尋視窗."
-L.CLICK_TOGGLE_PETJOURNAL = "中鍵點擊或Shift+左鍵點擊打開寵物手冊。"
-L.CLICK_TOGGLE_PVP = "右键单击打开/关闭PVP窗口。"
-L.CLICK_TOGGLE_RAIDS = "按住Alt键单击打开/关闭瀏覽團隊窗口。"
-L.CLICK_TOGGLE_SCENARIOS = "按住Ctrl键单击打开/关闭场景战役查找。"
-L.LFG = "尋求組隊"
+L["Alt-Click to open the Raid Finder."] = "Alt-點擊開啟/關閉團隊搜尋器視窗。"
+L["Click to open the Dungeon Finder."] = "點擊開啟/關閉地城搜尋視窗。"
+L["Ctrl-Click to open the Premade Groups window."] = "Ctrl-點擊開啟/關閉 預組隊伍視窗。"
+L["LFG"] = "尋求組隊"
+L["Middle-Click or Shift-Click to open the Pet Journal."] = "中鍵點擊或Shift+左鍵點擊開啟/關閉寵物手冊。"
+L["Right-Click to open the PVP window."] = "右鍵點擊開啟/關閉PVP視窗。"
 
 return end
