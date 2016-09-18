@@ -1,3 +1,8 @@
+### Version 7.0.3.1
+
+* Ctrl-click now opens Premade Groups instead of Scenarios
+* Unusable actions (eg. Raid Finder below level 85) are no longer shown in the tooltip
+
 ### Version 7.0.3.0
 
 * Updated for WoW 7.0

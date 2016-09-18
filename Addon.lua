@@ -9,6 +9,39 @@
 
 local ADDON, L = ...
 
+local actions = {
+	{
+		text     = L["Click to open the Dungeon Finder."],
+		enabled  = function() return UnitLevel("player") >= SHOW_LFD_LEVEL end,
+		selected = function(button) return button == "LeftButton" and not IsModifierKeyDown() end,
+		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", queueType and queueTypes[queueType] or LFDParentFrame) end,
+	},
+	{
+		text     = L["Alt-Click to open the Raid Finder."],
+		enabled  = function() return UnitLevel("player") >= RAID_FINDER_SHOW_LEVEL end,
+		selected = function(button) return button == "LeftButton" and IsAltKeyDown() end,
+		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame) end,
+	},
+	{
+		text     = L["Ctrl-Click to open the Premade Groups window."],
+		enabled  = function() return not IsTrialAccount() end,
+		selected = function(button) return button == "LeftButton" and IsControlKeyDown() end,
+		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", LFGListPVEStub) end,
+	},
+	{
+		text     = L["Right-Click to open the PVP window."],
+		enabled  = function() return UnitLevel("player") >= SHOW_PVP_LEVEL end,
+		selected = function(button) return button == "RightButton" end,
+		func     = function(queueType) TogglePVPUI() end,
+	},
+	{
+		text     = L["Middle-Click or Shift-Click to open the Pet Journal."],
+		enabled  = function() return C_PetJournal.IsFindBattleEnabled() and C_PetJournal.IsJournalUnlocked() end,
+		selected = function(button) return button == "MiddleButton" or (button == "LeftButton" and IsShiftKeyDown()) end,
+		func     = function(queueType) ToggleCollectionsJournal(2) end,
+	},
+}
+
 ------------------------------------------------------------------------
 
 for queueType, t in pairs(LFG_EYE_TEXTURES) do
@@ -111,13 +144,14 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				QueueStatusFrame:SetPoint("BOTTOM", self, "TOP", 0, 5)
 			end
 		else
+			local level = UnitLevel("player")
 			GameTooltip:SetOwner(self, GetScreenHalf() == "TOP" and "ANCHOR_BOTTOM" or "ANCHOR_TOP")
 			GameTooltip:SetText(L["LFG"])
-			GameTooltip:AddLine(L["Click to open the Dungeon Finder."], 1, 1, 1)
-			GameTooltip:AddLine(L["Right-Click to open the PVP window."], 1, 1, 1)
-			GameTooltip:AddLine(L.AltClickRaids, 1, 1, 1) -- Alt-click for Raid Finder
-			GameTooltip:AddLine(L.CtrlClickPremades, 1, 1, 1) -- Ctrl-click for Premade Groups
-			GameTooltip:AddLine(L.ShiftClickPets, 1, 1, 1) -- Middle/Shift-click for Pet Journal
+			for i = 1, #actions do
+				if actions[i].enabled() then
+					GameTooltip:AddLine(actions[i].text, 1, 1, 1)
+				end
+			end
 			GameTooltip:Show()
 		end
 	end,
@@ -127,24 +161,22 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	end,
 	OnClick = function(self, button)
 		local queueType = GetQueueInfo()
-		if button == "RightButton" then
-			if queueType and not IsShiftKeyDown() then
-				PlaySound("igMainMenuOpen")
-				local screenHalf = GetScreenHalf()
-				QueueStatusMinimapButtonDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
-				QueueStatusMinimapButtonDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
-				ToggleDropDownMenu(1, nil, QueueStatusMinimapButtonDropDown, self:GetName() or self, 0, 0)
-			else
-				TogglePVPUI()
-			end
-		elseif button == "MiddleButton" or IsShiftKeyDown() then
-			ToggleCollectionsJournal(2)
-		elseif IsControlKeyDown() then
-			PVEFrame_ToggleFrame("GroupFinderFrame", LFGListPVEStub)
-		elseif IsAltKeyDown() then
-			PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame)
+		if button == "RightButton" and queueType and not IsShiftKeyDown() then
+			PlaySound("igMainMenuOpen")
+			local screenHalf = GetScreenHalf()
+			QueueStatusMinimapButtonDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
+			QueueStatusMinimapButtonDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
+			ToggleDropDownMenu(1, nil, QueueStatusMinimapButtonDropDown, self:GetName() or self, 0, 0)
 		else
-			PVEFrame_ToggleFrame("GroupFinderFrame", queueType and queueTypes[queueType] or LFDParentFrame)
+			for i = 1, #actions do
+				local action = actions[i]
+				if action.selected(button) then
+					if action.enabled() then
+						action.func(queueType)
+					end
+					break
+				end
+			end
 		end
 	end,
 })
