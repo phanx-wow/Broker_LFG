@@ -14,31 +14,31 @@ local actions = {
 		text     = L["Click to open the Dungeon Finder."],
 		enabled  = function() return UnitLevel("player") >= SHOW_LFD_LEVEL end,
 		selected = function(button) return button == "LeftButton" and not IsModifierKeyDown() end,
-		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", queueType and queueTypes[queueType] or LFDParentFrame) end,
+		func     = function() PVEFrame_ToggleFrame("GroupFinderFrame", LFDParentFrame) end,
 	},
 	{
 		text     = L["Alt-Click to open the Raid Finder."],
 		enabled  = function() return UnitLevel("player") >= RAID_FINDER_SHOW_LEVEL end,
 		selected = function(button) return button == "LeftButton" and IsAltKeyDown() end,
-		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame) end,
+		func     = function() PVEFrame_ToggleFrame("GroupFinderFrame", RaidFinderFrame) end,
 	},
 	{
 		text     = L["Ctrl-Click to open the Premade Groups window."],
 		enabled  = function() return not IsTrialAccount() end,
 		selected = function(button) return button == "LeftButton" and IsControlKeyDown() end,
-		func     = function(queueType) PVEFrame_ToggleFrame("GroupFinderFrame", LFGListPVEStub) end,
+		func     = function() PVEFrame_ToggleFrame("GroupFinderFrame", LFGListPVEStub) end,
 	},
 	{
 		text     = L["Right-Click to open the PVP window."],
 		enabled  = function() return UnitLevel("player") >= SHOW_PVP_LEVEL end,
 		selected = function(button) return button == "RightButton" end,
-		func     = function(queueType) TogglePVPUI() end,
+		func     = function() TogglePVPUI() end,
 	},
 	{
 		text     = L["Middle-Click or Shift-Click to open the Pet Journal."],
 		enabled  = function() return C_PetJournal.IsFindBattleEnabled() and C_PetJournal.IsJournalUnlocked() end,
 		selected = function(button) return button == "MiddleButton" or (button == "LeftButton" and IsShiftKeyDown()) end,
-		func     = function(queueType) ToggleCollectionsJournal(2) end,
+		func     = function() ToggleCollectionsJournal(2) end,
 	},
 }
 
@@ -64,17 +64,12 @@ end
 ------------------------------------------------------------------------
 
 local queueTypes = {
-	"dungeon",	-- Dungeon Finder
-	"raid",		-- Other Raids
-	"raid",		-- Raid Finder
-	"scenario"	-- Scenarios
-}
-
-local queueFrames = {
-	LFDParentFrame,
-	RaidFinderFrame,
-	RaidFinderFrame,
-	ScenarioFinderFrame
+	"dungeon",  -- Dungeon Finder
+	"raid",     -- Other Raids
+	"raid",     -- Raid Finder
+	"scenario", -- Scenarios
+	"raid",     -- Flex Raid
+	"pvp"       -- World PVP
 }
 
 local function GetQueueInfo()
@@ -160,8 +155,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 		GameTooltip:Hide()
 	end,
 	OnClick = function(self, button)
-		local queueType = GetQueueInfo()
-		if button == "RightButton" and queueType and not IsShiftKeyDown() then
+		if button == "RightButton" and GetQueueInfo() and not IsShiftKeyDown() then
 			PlaySound("igMainMenuOpen")
 			local screenHalf = GetScreenHalf()
 			QueueStatusMinimapButtonDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
@@ -172,7 +166,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 				local action = actions[i]
 				if action.selected(button) then
 					if action.enabled() then
-						action.func(queueType)
+						action.func()
 					end
 					break
 				end
