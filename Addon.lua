@@ -156,7 +156,7 @@ addon.feed = LibStub("LibDataBroker-1.1"):NewDataObject("LFG", {
 	end,
 	OnClick = function(self, button)
 		if button == "RightButton" and GetQueueInfo() and not IsShiftKeyDown() then
-			PlaySound(850)
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPEN)
 			local screenHalf = GetScreenHalf()
 			QueueStatusMinimapButtonDropDown.point = screenHalf == "TOP" and "TOPLEFT" or "BOTTOMLEFT"
 			QueueStatusMinimapButtonDropDown.relativePoint = screenHalf == "TOP" and "BOTTOMLEFT" or "TOPLEFT"
