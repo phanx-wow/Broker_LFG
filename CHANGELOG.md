@@ -1,3 +1,7 @@
+### Version 7.3.5.0
+
+* Updated for game changes (i.e. PlaySound errors)
+
 ### Version 7.1.0.0
 
 * Updated for WoW 7.1
